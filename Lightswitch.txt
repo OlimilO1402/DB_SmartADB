@@ -1,0 +1,77 @@
+Name eines Entities/einer Tabelle:
+hier z.B. "Country"
+Eigenschaften:
+------------------------------------------
+Country
+* Allgemein
+  Standardbildschirm: .Automatisch.
+  Pluralname: "Countries"
+  [-v/] Kann gesucht werden
+  Name: "Country"
+* Darstellung
+  Beschreibung: ""
+  Anzeigename: "Country"
+  Zusammenfassungseigenschaft: "Name" [v]
+------------------------------------------
+
+------------------------------------------
+Country::Id
+* Darstellung
+  Beschreibung: ""
+  Anzeigename: "Id"
+  [-v/] Standardmäßig anzeigen
+------------------------------------------
+------------------------------------------
+Country::Name
+* Allgemein
+  [   ] In eindeutigen Index einschließen
+  [   ] Ist berechnet
+  [-v/] kann gesucht werden
+  Name: "Name"
+  _Auswahlliste..._
+  
+* Darstellung
+  Beschreibung: ""
+  Anzeigename: "Name"
+  [-v/] Standardmäßig anzeigen
+* Validierung
+  [-v/] Ist erfoderlich
+  Maximale Länge: "255"
+------------------------------------------
+
+
+im ListDetailView "Countries"
+die Toolbar enthält die Buttons:
+[+], [/], [-], [|>|], [A-Z], [v], [Suchen /°]
+[+]: Fügt der Liste eine neues Element hinzu und zeigt eine Dialogfeld zur Bearbeitung an.
+[/]: Zeigt ein Dialogfeld zum Bearbeiten des aktuellen Elements in der Liste an.
+[-]: Löscht das aktuelle Element aus der Liste.
+[|>|]: Daten in eine Microsoft Office Excel-Datei exportieren.
+[A-Z]: - (Sortierreichenfolge umschalten) alternativ Z-A
+[v]: "Name", "NameInt", "Vorwahl" (nach was soll sortiert werden.
+[Suchen /°]: Suchen
+
+
+Toolbar: zuerst ist nur der Button [ + ] aktiv.
+* der View enthält links eine Liste, und rechts Eingebefelder, die Anfangs noch ausgegraut sind.
+* es wird [ + ] geklickt, es erscheint ein modaler Dialog "Country hinzufügen" 
+  mit 3 Feldern: "Name:", "Name Int:" und "Vorwahl:"
+* Daten eingeben ("Deuschland", "Germany", "0049") und OK klicken
+* in der linken Liste erscheint der Name des neuen Elements, 
+  mit einem Zeichen links davon (wie ein Kranz) das signalisiert dass Daten geändert wurden,
+  und noch nicht gespeichert ist.
+  die Eigenschaften Name, NameInt und Vorwahl werden
+  in den Eingabefeldern rechts neben der Liste angezeigt.
+  
+Toolbar: Jetzt sind alle Buttons aktiv
+* wird wieder [ + ] geklickt erscheint wieder der modale Dialog "Country hinzufügen"
+* wird links in der Liste ein Element ausgewählt, werden rechts die Felder aktualisiert
+  werden Werte in den Feldern rechts geändert, werden diese sofort in das aktuelle Element aktualisert.
+  mit einem Doppelklick auf einen Eintrag in der linken Liste wird wieder der modale Dialog zum
+  Bearbeiten des Elements angezeigt.
+  
+  
+Im ListDetailView "Cities"
+* den Plus-Schalter klicken es werden die Eingabefelder rechts ausgegraut dargestellt.
+* der Dialog "City hinzufügen" enthält für Country ein Drop-Down-Feld, 
+  über den ein Country-Element ausgewählt werden kann.

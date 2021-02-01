@@ -1,0 +1,79 @@
+///////////////////////////////////////////////////////////////////////////////////
+// the first icon is for the programm itself the second icon is always for the file
+// Icon:
+//
+1                       ICON                    "Icon\program.ico"
+2                       ICON                    "Icon\file.ico"
+
+#define RT_MANIFEST 24
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+1                       RT_MANIFEST             "Manifest\SmartADB.exe.manifest"
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Bitmaps Standard Toolbar
+//
+//1010                    BITMAP                  "Bitmap\Btb1\Btb1_01_neu_en.bmp"
+//1020                    BITMAP                  "Bitmap\Btb1\Btb1_02_open_en.bmp"
+//1030                    BITMAP                  "Bitmap\Btb1\Btb1_03_save_en.bmp"
+//1040                    BITMAP                  "Bitmap\Btb1\Btb1_04_wlsimport.bmp"
+//1050                    BITMAP                  "Bitmap\Btb1\Btb1_05_xml1import.bmp"
+//1060                    BITMAP                  "Bitmap\Btb1\Btb1_050_Pflinks_en.bmp"
+//1070                    BITMAP                  "Bitmap\Btb1\Btb1_060_Pfrech_en.bmp"
+//1080                    BITMAP                  "Bitmap\Btb1\Btb1_07_undo.bmp"
+//1090                    BITMAP                  "Bitmap\Btb1\Btb1_08_redo.bmp"
+//1100                    BITMAP                  "Bitmap\Btb1\Btb1_09_Hnn.bmp"
+//1110                    BITMAP                  "Bitmap\Btb1\Btb1_10_Aushub.bmp"
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Bitmaps Ergebnis Toolbar
+//
+//2010                    BITMAP                  "Bitmap\Btb2\Btb2_01_Berech.bmp"
+//2020                    BITMAP                  "Bitmap\Btb2\Btb2_02_Ergebn.bmp"
+//2030                    BITMAP                  "Bitmap\Btb2\Btb2_03_WalsView.bmp"
+//2040                    BITMAP                  "Bitmap\Btb2\Btb2_04_Druckerg.bmp"
+//2050                    BITMAP                  "Bitmap\Btb2\Btb2_05_Druckgrf.bmp"
+//2060                    BITMAP                  "Bitmap\Btb2\Btb2_06_loeschall.bmp"
+//2070                    BITMAP                  "Bitmap\Btb2\Btb2_07_loesch_1.bmp"
+//2080                    BITMAP                  "Bitmap\Btb2\Btb2_08_LupeMinus.bmp"
+//2090                    BITMAP                  "Bitmap\Btb2\Btb2_09_LupePlus.bmp"
+//2100                    BITMAP                  "Bitmap\Btb2\Btb2_10_LupeVollbild.bmp"
+//2110                    BITMAP                  "Bitmap\Btb2\Btb2_11_KEM.bmp"
+//2120                    BITMAP                  "Bitmap\Btb2\Btb2_12_FEM.bmp"
+//2130                    BITMAP                  "Bitmap\Btb2\Btb2_13_cross.bmp"
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Bitmaps Ergebnis Toolbar
+//
+//3010                    BITMAP                  "Bitmap\Btb3\Btb3_01_norm.bmp"
+//3020                    BITMAP                  "Bitmap\Btb3\Btb3_02_Wand.bmp"
+//3030                    BITMAP                  "Bitmap\Btb3\Btb3_03_Boesch.bmp"
+//3040                    BITMAP                  "Bitmap\Btb3\Btb3_04_aktE.bmp"
+//3050                    BITMAP                  "Bitmap\Btb3\Btb3_05_pasE.bmp"
+//3060                    BITMAP                  "Bitmap\Btb3\Btb3_06_Last.bmp"
+//3070                    BITMAP                  "Bitmap\Btb3\Btb3_07_Ank.bmp"
+//3080                    BITMAP                  "Bitmap\Btb3\Btb3_08_Aush.bmp"
+//3090                    BITMAP                  "Bitmap\Btb3\Btb3_09_kKote.bmp"
+// die folgenden drei von Btb2
+//3100                    BITMAP                  "Bitmap\Btb2\Btb2_01_Berech.bmp"
+//3110                    BITMAP                  "Bitmap\Btb2\Btb2_02_Ergebn.bmp"
+//3120                    BITMAP                  "Bitmap\Btb2\Btb2_03_WalsView.bmp"
+// die obigen drei von Btb2
+//3130                    BITMAP                  "Bitmap\Btb3\Btb3_13_cul.bmp"
+//3140                    BITMAP                  "Bitmap\Btb3\Btb3_14_wwdim.bmp"
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Stringresourcen in Dateien
+//
+//1                       CUSTOM                  "..\WWLang_Lg1_english.txt"
+//2                       CUSTOM                  "..\WWLang_Lg2_deutsch.txt"
+//3                       CUSTOM                  "..\WWLang_Lg3_croatia.txt"
+//4                       CUSTOM                  "..\WWLang_Lg4_greece.txt"
+//5                       CUSTOM                  "..\WWLang_Lg5_russia.txt"
