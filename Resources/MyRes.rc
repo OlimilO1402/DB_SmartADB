@@ -2,8 +2,8 @@
 // the first icon is for the programm itself the second icon is always for the file
 // Icon:
 //
-1                       ICON                    "Icon\program.ico"
-2                       ICON                    "Icon\file.ico"
+1                       ICON                    "Icons\\AppIcon.ico"
+2                       ICON                    "Icons\\DocIcon.ico"
 
 #define RT_MANIFEST 24
 
@@ -11,7 +11,7 @@
 //
 // 24
 //
-1                       RT_MANIFEST             "Manifest\SmartADB.exe.manifest"
+1                       RT_MANIFEST             "Manifest\manifest.exe.manifest"
 
 ///////////////////////////////////////////////////////////////////////////////////
 //
