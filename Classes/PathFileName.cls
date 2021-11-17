@@ -164,7 +164,7 @@ Public Property Let FileName(RHS As String)
     End If
 End Property
 
-Public Function Equals(other As PathFileName) As Boolean
+Public Function Equals(other As PathFilename) As Boolean
     Equals = Me.CompareTo(other.Name) = 0
 End Function
 Public Property Get Ext() As String
@@ -222,10 +222,10 @@ Public Property Let Directory(ByVal i As Long, ByVal StrVal As String)
             Mid$(mPFN, P1, P2 - P1) = StrVal
         Else
             Dim ld As Long: ld = Len(Drive)
-            Dim L As String, r As String
-            L = Left$(mPFN, ld + P1 - 1)
+            Dim l As String, r As String
+            l = Left$(mPFN, ld + P1 - 1)
             r = Mid$(mPFN, ld + P2)
-            mPFN = L & StrVal & r
+            mPFN = l & StrVal & r
         End If
     Else
         MsgBox "i: " & CStr(i) & " ausserhalb des gültigen Bereichs"
@@ -243,18 +243,18 @@ End Property
 '    Set VersionInfo = VersionInfo.GetVersionInfo(Me.Name)
 'End Property
 
-Public Property Get length() As Long
-    length = Len(mPFN)
+Public Property Get Length() As Long
+    Length = Len(mPFN)
 End Property
-Public Property Let length(RHS As Long)
-    Dim L As Long: L = length
-    If L <> RHS Then
-      If L > RHS Then
+Public Property Let Length(RHS As Long)
+    Dim l As Long: l = Length
+    If l <> RHS Then
+      If l > RHS Then
         'verkleinern
         mPFN = Left$(mPFN, RHS)
       Else 'If l > RHS Then
         'mit Nullzeichen rechts vergrößern
-        mPFN = mPFN & String$(RHS - L, vbNullChar)
+        mPFN = mPFN & String$(RHS - l, vbNullChar)
       End If
     End If
 End Property
@@ -332,11 +332,11 @@ Public Function Shorted(Optional ByVal MaxLen As Long) As String
         End If
     End If
 End Function
-Public Function AssignCopy() As PathFileName
+Public Function AssignCopy() As PathFilename
     'um ständig wiederkehrendes Validieren zu umgehen nimmt man diese Funktion
     'die einfach nur den Inhalt in ein neues Objekt kopiert.
     'Das Kopie-Object ist dann genauso valid wie das Ursprungsobjekt.
-    Set AssignCopy = New PathFileName
+    Set AssignCopy = New PathFilename
     AssignCopy.ValidName = mPFN 'Me.Name
     AssignCopy.IsValid = Me.IsValid
 End Function
@@ -392,7 +392,7 @@ End Function
 Public Function Rename(ByVal ToPFN As String, _
                        Optional ByVal BolRenameMe As Boolean) As Boolean
 TryE: On Error GoTo CatchE
-    Dim RenFile As PathFileName: Set RenFile = MNew.PathFileName(ToPFN)
+    Dim RenFile As PathFilename: Set RenFile = MNew.PathFilename(ToPFN)
     Dim Cmd     As String
     If Not RenFile.Exists Then
         'Wird nicht renamed wenn es die Datei schon gibt
@@ -414,7 +414,7 @@ TryE: On Error GoTo CatchE
     'ein neues Verzeichnis mit Unterverzeichnissen anlegen
     If Len(sNewDir) = 0 Then sNewDir = Me.Path
     Call MakeValid(sNewDir)
-    Dim NewDir As PathFileName: Set NewDir = MNew.PathFileName(sNewDir)
+    Dim NewDir As PathFilename: Set NewDir = MNew.PathFilename(sNewDir)
     'zuerst in das jeweilige Laufwerk wechseln
     Dim sd As String: sd = NewDir.Drive()
     Call ChDir(sd)
@@ -456,8 +456,8 @@ Public Function Validate(Optional sPath As String) As String
     'IsValid = True
 End Function
 
-Public Function PFNwithChangedExt(ByVal newExt As String) As PathFileName
-    Set PFNwithChangedExt = MNew.PathFileName(mPFN, , newExt)
+Public Function PFNwithChangedExt(ByVal newExt As String) As PathFilename
+    Set PFNwithChangedExt = MNew.PathFilename(mPFN, , newExt)
     If Len(newExt) = 0 Then PFNwithChangedExt.Ext = vbNullString
 End Function
 '####################'   Private Procedures   '####################'
@@ -607,7 +607,7 @@ TryE: On Error GoTo CatchE
     Case 92: X = X & "/"
     Case 47: X = X & "\"
     End Select
-    aStrPath = MStrings.RemoveChars(aStrPath, X)
+    aStrPath = MString.RemoveChars(aStrPath, X)
     
     
 '    'und alle doppelten Backslashes entfernen,
@@ -635,7 +635,7 @@ CatchE:
 End Function
 
 'String-Routinen
-'jetzt in MStrings
+'jetzt in MString
 'Private Function RemoveChars(ByVal this As String, CharsToRemove As String) As String
 '    Dim c As String
 '    Dim i As Long
