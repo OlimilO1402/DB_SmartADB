@@ -243,22 +243,22 @@ Try: On Error GoTo Catch
     Exit Function
 Catch:
 End Function
-Function Double_TryParse(ByVal Value As String, ByRef DblVal_out As Double) As Boolean
-Try: On Error GoTo Catch
-    Value = Replace(Value, ",", ".")
-    DblVal_out = CDbl(Val(Value))
-    Double_TryParse = True
-    Exit Function
-Catch:
-End Function
-Function Single_TryParse(ByVal Value As String, ByRef SngVal_out As Single) As Boolean
-Try: On Error GoTo Catch
-    Value = Replace(Value, ",", ".")
-    SngVal_out = CSng(Val(Value))
-    Single_TryParse = True
-    Exit Function
-Catch:
-End Function
+'Function Double_TryParse(ByVal Value As String, ByRef DblVal_out As Double) As Boolean
+'Try: On Error GoTo Catch
+'    Value = Replace(Value, ",", ".")
+'    DblVal_out = CDbl(Val(Value))
+'    Double_TryParse = True
+'    Exit Function
+'Catch:
+'End Function
+'Function Single_TryParse(ByVal Value As String, ByRef SngVal_out As Single) As Boolean
+'Try: On Error GoTo Catch
+'    Value = Replace(Value, ",", ".")
+'    SngVal_out = CSng(Val(Value))
+'    Single_TryParse = True
+'    Exit Function
+'Catch:
+'End Function
 
 'Private Sub ParseProperty(ByRef Dst, ByVal p As String)
 '    'es soll ein Fehler ausgegeben werden, wenn die Typen nicht übereinstimmen

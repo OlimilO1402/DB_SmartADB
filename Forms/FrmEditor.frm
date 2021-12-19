@@ -36,14 +36,14 @@ Begin VB.Form FrmEditor
       Width           =   1335
    End
    Begin VB.TextBox Text1 
-      Height          =   6735
-      Left            =   120
+      Height          =   6855
+      Left            =   0
       MultiLine       =   -1  'True
       ScrollBars      =   3  'Beides
       TabIndex        =   0
       Text            =   "FrmEditor.frx":0000
       Top             =   600
-      Width           =   9735
+      Width           =   9975
    End
 End
 Attribute VB_Name = "FrmEditor"
@@ -66,9 +66,9 @@ Public Function ShowDialog(owner As Form, sContent As String) As VbMsgBoxResult
 End Function
 
 Sub MoveMe(owner As Form)
-    Dim L As Single: L = owner.Left + owner.Width / 2 - Me.Width / 2
+    Dim l As Single: l = owner.Left + owner.Width / 2 - Me.Width / 2
     Dim T As Single: T = owner.Top + owner.Height / 2 - Me.Height / 2
-    Me.Move L, T
+    Me.Move l, T
 End Sub
 
 Private Sub BtnCancel_Click()
@@ -83,10 +83,10 @@ Private Sub BtnSave_Click()
 End Sub
 
 Private Sub Form_Resize()
-    Dim brdr As Single: brdr = 8 * Screen.TwipsPerPixelX
-    Dim L As Single: L = Text1.Left
+    Dim brdr As Single: brdr = 0 '8 * Screen.TwipsPerPixelX
+    Dim l As Single: l = Text1.Left
     Dim T As Single: T = Text1.Top
-    Dim W As Single: W = Me.ScaleWidth - L - brdr
+    Dim W As Single: W = Me.ScaleWidth - l - brdr
     Dim H As Single: H = Me.ScaleHeight - T - brdr
-    If W > 0 And H > 0 Then Text1.Move L, T, W, H
+    If W > 0 And H > 0 Then Text1.Move l, T, W, H
 End Sub

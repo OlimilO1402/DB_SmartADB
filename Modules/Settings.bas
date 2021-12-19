@@ -77,7 +77,9 @@ Sub MRUFiles_Add(pfn As PathFileName)
     
     'Dim pfn As PathFileName: Set pfn = MNew.PathFileName(FNm)
     'If m_MRUFiles.Contains(pfn, True) Then
-    m_MRUFiles.RemoveObj pfn
+    If m_MRUFiles.Contains(pfn) Then
+        m_MRUFiles.RemoveObj pfn
+    End If
     m_MRUFiles.Insert 0, pfn
     If MaxMRUFiles < m_MRUFiles.Count Then
         'jetzt die letzte Datei löschen
@@ -111,7 +113,7 @@ Sub MRUFiles_Save(mru As List)
     SaveSetting apnam, scnam, "nMRUFiles", n
     For i = 0 To n - 1
         Dim pfn As PathFileName: Set pfn = m_MRUFiles.Item(i)
-        SaveSetting apnam, scnam, "MRUFile" & i, pfn.Name
+        SaveSetting apnam, scnam, "MRUFile" & i, pfn.Value
     Next
 End Sub
 

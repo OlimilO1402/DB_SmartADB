@@ -38,7 +38,7 @@ Public Sub Terminate() 'called from FMain.Form_Unload
 End Sub
 
 Public Function IsValidFileExt(pfn As PathFileName) As Boolean
-    IsValidFileExt = StrComp(pfn.Ext, MyExt, vbTextCompare) = 0
+    IsValidFileExt = StrComp(pfn.Extension, MyExt, vbTextCompare) = 0
     If IsValidFileExt Then Exit Function
     'hier evtl weitere Dateiformate prüfen falls true dann gleich raus
 End Function
@@ -56,17 +56,26 @@ Public Function GetFilter() As String
 End Function
 
 Public Function OpenFileName_ShowDlg(ByRef pfn_inout As PathFileName) As VbMsgBoxResult
-Try: On Error GoTo Catch
-    With FMain.FileDlg
-        .InitDir = App.Path
+'Try: On Error GoTo Catch
+    Dim OFD As OpenFileDialog: Set OFD = New OpenFileDialog
+    With OFD
+        .InitialDirectory = App.Path
         If Not pfn_inout Is Nothing Then
-            .FileName = pfn_inout.Name
+            .FileName = pfn_inout.Value
         End If
         .Filter = GetFilter
-        .CancelError = True
-        .ShowOpen
-        Set pfn_inout = MNew.PathFileName(.FileName)
+        OpenFileName_ShowDlg = .ShowDialog
     End With
+'    With FMain.FileDlg
+'        .InitDir = App.Path
+'        If Not pfn_inout Is Nothing Then
+'            .FileName = pfn_inout.Name
+'        End If
+'        .Filter = GetFilter
+'        .CancelError = True
+'        .ShowOpen
+'        Set pfn_inout = MNew.PathFileName(.FileName)
+'    End With
     'so wie bringen wir jetzt den Dateinamen in die MRUList?
     'die MRUlist ist das eine normale List, ein Stack oder ein Queue
     'die Datei an erster Stelle, soll die da bleiben oder soll die nach unten rutschen
@@ -84,28 +93,46 @@ Try: On Error GoTo Catch
     'Settings.MRUFiles_Add pfn_inout
     
     
-    OpenFileName_ShowDlg = vbOK
-    Exit Function
-Catch: OpenFileName_ShowDlg = vbCancel
+    'OpenFileName_ShowDlg = vbOK
+'    Exit Function
+'Catch: OpenFileName_ShowDlg = vbCancel
 End Function
 
 Public Function SaveFileName_ShowDlg(ByRef pfn_inout As PathFileName) As VbMsgBoxResult
-Try: On Error GoTo Catch
-    With FMain.FileDlg
-        .InitDir = App.Path
+'Try: On Error GoTo Catch
+    Dim SFD As SaveFileDialog: Set SFD = New SaveFileDialog
+    With SFD
+        .InitialDirectory = App.Path
         If Not pfn_inout Is Nothing Then
-            .FileName = pfn_inout.Name
+            .FileName = pfn_inout.Value
         End If
         .Filter = GetFilter
-        .CancelError = True
-        .ShowSave
-        Set pfn_inout = MNew.PathFileName(.FileName)
+        SaveFileName_ShowDlg = .ShowDialog
+        
+        'so
+        'Set pfn_inout = MNew.PathFileName(.FileName)
+        'oder so?
+        If pfn_inout Is Nothing Then
+            Set pfn_inout = MNew.PathFileName(.FileName)
+        Else
+            pfn_inout.New_ .FileName
+        End If
     End With
+'    With FMain.FileDlg
+'        .InitDir = App.Path
+'        If Not pfn_inout Is Nothing Then
+'            .FileName = pfn_inout.Value
+'        End If
+'        .Filter = GetFilter
+'        .CancelError = True
+'        .ShowSave
+'        Set pfn_inout = MNew.PathFileName(.FileName)
+'    End With
     
     Settings.MRUFiles_Add pfn_inout
     
-    SaveFileName_ShowDlg = vbOK
-    Exit Function
-Catch: SaveFileName_ShowDlg = vbCancel
+'    SaveFileName_ShowDlg = vbOK
+'    Exit Function
+'Catch: SaveFileName_ShowDlg = vbCancel
 End Function
 

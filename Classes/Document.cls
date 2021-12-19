@@ -20,7 +20,7 @@ Public Countries  As List 'Of Country
 Public Tests      As List 'Of Test
 Public AllObjects As List
 
-Private m_pfn     As PathFilename
+Private m_PFN     As PathFileName
 
 Private m_DocVersion   As String 'Datei-Dokumentversion
 Private m_DataVersion  As Long   'Aktuelle Datenversion (wird immer um eins hochgezählt)
@@ -42,15 +42,15 @@ Private Sub Class_Initialize()
     Set Countries = MNew.List(vbObject)    'Of Country
     Set Tests = MNew.List(vbObject)
     Set AllObjects = New List 'Of all above
-    Set m_pfn = MNew.PathFilename(Application.DefaultFileName)
+    Set m_PFN = MNew.PathFileName(Application.DefaultFileName)
 End Sub
 
-Friend Sub New_(Optional ByVal aPFN As PathFilename = Nothing)
-    Set m_pfn = aPFN
-    If Not m_pfn Is Nothing Then
-        If m_pfn.Exists Then LoadFile
+Friend Sub New_(Optional ByVal aPFN As PathFileName = Nothing)
+    Set m_PFN = aPFN
+    If Not m_PFN Is Nothing Then
+        If m_PFN.Exists Then LoadFile
     Else
-        Set m_pfn = MNew.PathFilename(Application.DefaultFileName)
+        Set m_PFN = MNew.PathFileName(Application.DefaultFileName)
     End If
     'soll bei New gleich ein load erfolgen?
     '
@@ -66,12 +66,12 @@ Friend Sub New_(Optional ByVal aPFN As PathFilename = Nothing)
 End Sub
 
 Public Property Get Exists() As Boolean
-    If m_pfn Is Nothing Then Exit Property
-    Exists = m_pfn.Exists
+    If m_PFN Is Nothing Then Exit Property
+    Exists = m_PFN.Exists
 End Property
 
-Public Property Get PathFilename() As PathFilename
-    Set PathFilename = m_pfn
+Public Property Get PathFileName() As PathFileName
+    Set PathFileName = m_PFN
 End Property
 
 Public Sub Add(aObj As Object)
@@ -159,7 +159,7 @@ End Sub
 Friend Function ReadFileContent(sFileContent_out As String) As Boolean
 Try: On Error GoTo Finally
     Dim FNr As Integer: FNr = FreeFile
-    Open m_pfn.Name For Binary Access Read As FNr
+    Open m_PFN.value For Binary Access Read As FNr
     sFileContent_out = Space$(LOF(FNr))
     Get FNr, , sFileContent_out
 Finally:
@@ -169,8 +169,8 @@ End Function
 Friend Function SaveFileContent(sFileContent As String) As Boolean
 Try: On Error GoTo Finally
     Dim FNr As Integer: FNr = FreeFile
-    If m_pfn.Exists Then m_pfn.Delete
-    Open m_pfn.Name For Binary As FNr
+    If m_PFN.Exists Then m_PFN.Delete
+    Open m_PFN.value For Binary As FNr
     Put FNr, , sFileContent
 Finally:
     Close FNr
@@ -191,10 +191,10 @@ Private Sub LoadFile() '_aPFN As String)
     ReadFileContent sContent
     Parse sContent
 End Sub
-Public Sub SaveFile(Optional ByVal aPFN As PathFilename = Nothing)
+Public Sub SaveFile(Optional ByVal aPFN As PathFileName = Nothing)
     'If Len(aPFN) Then pfn = aPFN 'speichern unter
     'If Len(pfn) = 0 Then Exit Sub
-    If Not aPFN Is Nothing Then Set m_pfn = aPFN
+    If Not aPFN Is Nothing Then Set m_PFN = aPFN
     Serial
     Dim sContent As String: sContent = Serializer.LStr.ToStr
     SaveFileContent sContent

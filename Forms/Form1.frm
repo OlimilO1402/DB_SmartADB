@@ -1,6 +1,5 @@
 VERSION 5.00
 Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form FMain 
    Caption         =   "Form1"
    ClientHeight    =   9735
@@ -601,13 +600,6 @@ Begin VB.Form FMain
             Width           =   630
          End
       End
-   End
-   Begin MSComDlg.CommonDialog FileDlg 
-      Left            =   8760
-      Top             =   0
-      _ExtentX        =   847
-      _ExtentY        =   847
-      _Version        =   393216
    End
    Begin VB.PictureBox PnlCCAT 
       Appearance      =   0  '2D
@@ -1333,8 +1325,8 @@ Private Sub Form_Load()
     m_SplPersons.BorderStyle = bsXPStyl
     
     'Me.Caption = App.ProductName & " - " & Application.DefaultFileName '& "]"
-    Dim pfn As PathFilename
-    If Len(Command$) Then Set pfn = MNew.PathFilename(Command$)
+    Dim pfn As PathFileName
+    If Len(Command$) Then Set pfn = MNew.PathFileName(Command$)
 '        if application.IsValidFileExt(pfn)
 '        Set m_Doc = MNew.Document()
 '        UpdateView
@@ -1525,7 +1517,7 @@ Private Sub Form_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integ
 '    If Not Data.GetFormat(vbCFFiles) Then Exit Sub
 '    Dim pfn As PathFileName: Set pfn = MNew.PathFileName(Data.Files(1))
 '    If Not Application.IsValidFileExt(pfn) Then
-'        MsgBox "Dieses Dateiformat wird momentan nicht unterstützt: " & vbCrLf & pfn.Ext & vbCrLf & pfn.Name
+'        MsgBox "Dieses Dateiformat wird momentan nicht unterstützt: " & vbCrLf & pfn.Extension & vbCrLf & pfn.Value
 '        Exit Sub
 '    End If
 '    NewDocument pfn
@@ -1537,12 +1529,12 @@ End Sub
 Private Sub MyDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, y As Single)
     If Data.Files.Count = 0 Then Exit Sub
     If Not Data.GetFormat(vbCFFiles) Then Exit Sub
-    Dim pfn As PathFilename: Set pfn = MNew.PathFilename(Data.Files(1))
+    Dim pfn As PathFileName: Set pfn = MNew.PathFileName(Data.Files(1))
     NewDocument pfn
 End Sub
 
 Private Sub mnuFileOpen_Click()
-    Dim pfn As PathFilename 'String ': pfn = App.Path & "\" & Application.DefaultFileName
+    Dim pfn As PathFileName 'String ': pfn = App.Path & "\" & Application.DefaultFileName
     If Application.OpenFileName_ShowDlg(pfn) = vbCancel Then Exit Sub
     'in Application.OpenFile wird die Datei schon in MRUFiles gesetzt. nein, jetzt hier in der Form
     NewDocument pfn
@@ -1552,7 +1544,7 @@ Private Sub mnuFileOpen_Click()
 End Sub
 
 Private Sub mnuFileRecentFile_Click(Index As Integer)
-    Dim pfn As PathFilename: Set pfn = Settings.MRUFiles.Item(Index)
+    Dim pfn As PathFileName: Set pfn = Settings.MRUFiles.Item(Index)
     NewDocument pfn
 '    Set m_Doc = MNew.Document(pfn)
 '    Settings.MRUFiles_Add pfn
@@ -1560,12 +1552,12 @@ Private Sub mnuFileRecentFile_Click(Index As Integer)
 '    UpdateView
 End Sub
 
-Private Sub NewDocument(pfn As PathFilename)
+Private Sub NewDocument(pfn As PathFileName)
     'If pfn Is Nothing Then wird im Document erledigt
     'bei DragDrop und wenn über command eine Datei übergeben wird:
     If Not pfn Is Nothing Then
         If Not Application.IsValidFileExt(pfn) Then
-            MsgBox "Dieses Dateiformat wird momentan nicht unterstützt: " & vbCrLf & pfn.Ext & vbCrLf & pfn.Name
+            MsgBox "Dieses Dateiformat wird momentan nicht unterstützt: " & vbCrLf & pfn.Extension & vbCrLf & pfn.Value
             Exit Sub
         End If
         Settings.MRUFiles_Add pfn
@@ -1584,7 +1576,7 @@ Private Sub mnuFileSave_Click()
 End Sub
 Private Sub mnuFileSaveAs_Click()
     'Dim sfnm As String: sfnm = IIf(m_Doc.Exists, m_Doc.Name, App.Path & "\" & Application.DefaultFileName)
-    Dim pfn As PathFilename: Set pfn = m_Doc.PathFilename
+    Dim pfn As PathFileName: Set pfn = m_Doc.PathFileName
     If Application.SaveFileName_ShowDlg(pfn) = vbCancel Then Exit Sub
     m_Doc.SaveFile pfn
     UpdateFMainCaption
@@ -1609,7 +1601,7 @@ Public Sub MRUFiles_FillMenu(mru As List)
         mnuFileRecentFiles.Visible = False
     Else
         mnuFileRecentFiles.Visible = True
-        Dim pfn As PathFilename: Set pfn = mru.Item(0)
+        Dim pfn As PathFileName: Set pfn = mru.Item(0)
         mnuFileRecentFile(0).Caption = "&" & 1 & " " & pfn.Shorted
         If n > 1 Then
             Dim i As Long
@@ -2314,7 +2306,7 @@ End Property
 '    LstTest.List(LstTest.ListIndex) = obj.Key
 'End Sub
 Public Sub UpdateFMainCaption(Optional ByVal fnam As String = "")
-    If Len(fnam) = 0 Then fnam = m_Doc.PathFilename.Name
+    If Len(fnam) = 0 Then fnam = m_Doc.PathFileName.Value
     Me.Caption = App.ProductName & " - [" & fnam & "]"
 End Sub
 

@@ -33,8 +33,8 @@ End Sub
 Public Property Get Country() As Country
     Set Country = m_Country
 End Property
-Public Property Set Country(Value As Country)
-    Set m_Country = Value
+Public Property Set Country(value As Country)
+    Set m_Country = value
     If Not m_Country.Cities.Contains(Me) Then
         m_Country.Cities.Add Me
     End If
