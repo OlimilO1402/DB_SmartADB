@@ -27,6 +27,10 @@ Public Number  As String
 
 
 
+Public Function ToStr() As String
+    ToStr = Me.Key
+End Function
+
 Public Property Get Key() As String
     If Not City Is Nothing Then
         If Not City.Country Is Nothing Then

@@ -36,12 +36,13 @@ Private Sub Class_Initialize()
     '  -> wird bei jeder Änderung um eins hochgezählt, weiß ob dirty oder clean
     '
     Set Persons = MNew.List(vbObject)    'Of Person
-    Set Addresses = MNew.List(vbObject)    'Of Address
-    Set TelefonNrs = MNew.List(vbObject)    'Of TelefonNr
-    Set Cities = MNew.List(vbObject)    'Of City
-    Set Countries = MNew.List(vbObject)    'Of Country
-    Set Tests = MNew.List(vbObject)
-    Set AllObjects = New List 'Of all above
+    Set Addresses = MNew.List(vbObject)  'Of Address
+    Set TelefonNrs = MNew.List(vbObject) 'Of TelefonNr
+    Set Cities = MNew.List(vbObject)     'Of City
+    Set Countries = MNew.List(vbObject)  'Of Country
+    'Set Tests = MNew.List(vbObject)
+    'Set AllObjects = New List 'Of all above
+    Set AllObjects = MNew.List(vbObject) 'Of all above
     Set m_PFN = MNew.PathFileName(Application.DefaultFileName)
 End Sub
 
@@ -75,6 +76,7 @@ Public Property Get PathFileName() As PathFileName
 End Property
 
 Public Sub Add(aObj As Object)
+Try: On Error GoTo Catch
     If Not aObj Is Nothing Then
         Select Case True
         Case TypeOf aObj Is Address:   Addresses.Add aObj
@@ -88,6 +90,9 @@ Public Sub Add(aObj As Object)
     End If
     'AllObjects dient imom für Paste
     AllObjects.Add aObj
+    Exit Sub
+Catch:
+    ErrHandler "Add", TypeName(aObj)
 End Sub
 
 Public Sub Remove(aObj As Object)
@@ -159,7 +164,7 @@ End Sub
 Friend Function ReadFileContent(sFileContent_out As String) As Boolean
 Try: On Error GoTo Finally
     Dim FNr As Integer: FNr = FreeFile
-    Open m_PFN.value For Binary Access Read As FNr
+    Open m_PFN.Value For Binary Access Read As FNr
     sFileContent_out = Space$(LOF(FNr))
     Get FNr, , sFileContent_out
 Finally:
@@ -170,7 +175,7 @@ Friend Function SaveFileContent(sFileContent As String) As Boolean
 Try: On Error GoTo Finally
     Dim FNr As Integer: FNr = FreeFile
     If m_PFN.Exists Then m_PFN.Delete
-    Open m_PFN.value For Binary As FNr
+    Open m_PFN.Value For Binary As FNr
     Put FNr, , sFileContent
 Finally:
     Close FNr
@@ -209,3 +214,29 @@ Public Sub Serial()
     Serializer.Init
     Serializer.Serial_Doc Me
 End Sub
+
+'copy this same function to every class, form or module
+'the name of the class or form will be added automatically
+'in standard-modules the function "TypeName(Me)" will not work, so simply replace it with the name of the Module
+' v ############################## v '   Local ErrHandler   ' v ############################## v '
+Private Function ErrHandler(ByVal FuncName As String, _
+                            Optional AddInfo As String, _
+                            Optional WinApiError, _
+                            Optional bLoud As Boolean = True, _
+                            Optional bErrLog As Boolean = True, _
+                            Optional vbDecor As VbMsgBoxStyle = vbOKOnly, _
+                            Optional bRetry As Boolean) As VbMsgBoxResult
+
+    If bRetry Then
+
+        ErrHandler = MessErrorRetry(TypeName(Me), FuncName, AddInfo, WinApiError, bErrLog)
+
+    Else
+
+        ErrHandler = MessError(TypeName(Me), FuncName, AddInfo, WinApiError, bLoud, bErrLog, vbDecor)
+
+    End If
+
+End Function
+
+

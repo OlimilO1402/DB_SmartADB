@@ -474,9 +474,9 @@ Private Sub Form_Load()
     
     
     TxtFileExt.Text = Application.MyExt
-    TxtAppReg.Text = Application.AppReg
+    TxtAppReg.Text = Application.AppExtReg
     TxtAppName.Text = Application.AppName
-    TxtAppPath.Text = App.Path
+    TxtAppPath.Text = App.path
     TxtIconId.Text = Application.FIconId
 End Sub
 

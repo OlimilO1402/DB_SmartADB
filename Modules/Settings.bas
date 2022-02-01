@@ -77,7 +77,7 @@ Sub MRUFiles_Add(pfn As PathFileName)
     
     'Dim pfn As PathFileName: Set pfn = MNew.PathFileName(FNm)
     'If m_MRUFiles.Contains(pfn, True) Then
-    If m_MRUFiles.Contains(pfn) Then
+    If m_MRUFiles.ContainsObj(pfn) Then
         m_MRUFiles.RemoveObj pfn
     End If
     m_MRUFiles.Insert 0, pfn

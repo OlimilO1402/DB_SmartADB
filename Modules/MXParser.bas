@@ -68,9 +68,11 @@ Try: On Error GoTo Catch
     Next
     Exit Sub
 Catch:
-    If Err Then
-        MsgBox Err.Description & vbCrLf & sLine
-    End If
+    'If Err Then
+        ErrHandler "ParseLines", "line: " & sLine & vbCrLf & "nr: " & hashtag & "typ: " & typenam & "params: " & Params
+
+        'MsgBox Err.Description & vbCrLf & sLine
+    'End If
 End Sub
 
 'Alle primitiven Datentypen stehen sofort da, alle Objekttypen stehen nur mit einem Index da
@@ -157,8 +159,11 @@ Catch:
         msg = "Attention type mismatch in: " & TypeName(obj) & "::" & ParamName & vbCrLf & _
               "expect datatype: " & VarType_ToStr(vtDst) & IIf(Len(sTypDst) And vtDst = vbObject, " " & sTypDst, "") & vbCrLf & _
               "given datatype: " & VarType_ToStr(vtSrc) & IIf(Len(sTypSrc) And vtSrc = vbObject, " " & sTypSrc, "") & ": """ & Value & """" & IIf(Len(msg), vbCrLf & msg, "")
-        MsgBox msg, vbCritical
+        'MsgBox msg, vbCritical
+        'ErrHandler "ParseParam", msg
+
     End If
+    ErrHandler "ParseParam", msg
 End Function
 Private Sub ParseDetectType(ByVal vtDst As VbVarType, ByVal TypDst As String, ByVal Value As String, vt_out As VbVarType, typ_out As String)
 'so diese Funktion erst im Fehlerfall aufrufen
@@ -202,6 +207,7 @@ Try: On Error GoTo Catch
     Is_Int = i = CDec(v)
     Exit Function
 Catch:
+    'ErrHandler "Is_Int", v
 End Function
 
 Function IsByt(ByVal v) As Boolean
@@ -209,6 +215,7 @@ Try: On Error GoTo Catch
     v = CByte(v)
     IsByt = True
 Catch:
+    'ErrHandler "IsByt", v
 End Function
 Function IsInt(v) As Boolean
 Try: On Error GoTo Catch
@@ -322,12 +329,15 @@ Try: On Error GoTo Catch
     End With
     Exit Sub
 Catch:
-    If Err Then
-        MsgBox Err.Description
-    End If
+    ErrHandler "Parse_Address", Params
+
+    'If Err Then
+    '    MsgBox Err.Description
+    'End If
 End Sub
 
 Public Sub Parse_City(obj As City, Params As String)
+Try: On Error GoTo Catch
     Dim sp() As String: sp = Split(Params, ",")
     Dim u As Long: u = UBound(sp)
     Dim i As Long
@@ -343,9 +353,13 @@ Public Sub Parse_City(obj As City, Params As String)
             End If
         End If
     End With
+    Exit Sub
+Catch:
+    ErrHandler "Parse_City", Params
 End Sub
 
 Public Sub Parse_Country(obj As Country, Params As String)
+Try: On Error GoTo Catch
     Dim sp() As String: sp = Split(Params, ",")
     Dim u As Long: u = UBound(sp)
     With obj
@@ -353,9 +367,13 @@ Public Sub Parse_Country(obj As Country, Params As String)
         If u >= 1 Then .NameInt = ParseParam(.NameInt, sp(1), obj, "NameInt")
         If u >= 2 Then .Vorwahl = ParseParam(.Vorwahl, sp(2), obj, "Vorwahl")
     End With
+    Exit Sub
+Catch:
+    ErrHandler "Parse_Country", Params
 End Sub
 
 Public Sub Parse_Person(obj As Person, Params As String)
+Try: On Error GoTo Catch
     Dim sp() As String: sp = Split(Params, ",")
     Dim u As Long: u = UBound(sp)
     With obj
@@ -372,15 +390,22 @@ Public Sub Parse_Person(obj As Person, Params As String)
         'If Not .Mother Is Nothing Then .Mother.Children.Add obj 'nein wird in set Mother gemacht
         'If Not .Father Is Nothing Then .Father.Children.Add obj
     End With
+    Exit Sub
+Catch:
+    ErrHandler "Parse_Person", Params
 End Sub
 
 Public Sub Parse_TelefonNr(obj As TelefonNr, Params As String)
+Try: On Error GoTo Catch
     Dim sp() As String: sp = Split(Params, ",")
     Dim u As Long: u = UBound(sp)
     With obj
         If u >= 0 Then Set .City = ParseParam(.City, sp(0), obj, "City")
         If u >= 1 Then .Number = ParseParam(.Number, sp(1), obj, "Number")
     End With
+    Exit Sub
+Catch:
+    ErrHandler "Parse_TelefonNr", Params
 End Sub
 
 Private Function VarType_ToStr(vt As VbVarType) As String
@@ -440,4 +465,29 @@ End Sub
 '#19=Address('Dominikusstraﬂe'  , '9' , '', #7)
 '#20=Address('Altenhauserstraﬂe', '33', '', #5)
 '#21=Address('Marzlinger Fuﬂweg', '13', '', #5)
+
+'copy this same function to every class, form or module
+'the name of the class or form will be added automatically
+'in standard-modules the function "TypeName(Me)" will not work, so simply replace it with the name of the Module
+' v ############################## v '   Local ErrHandler   ' v ############################## v '
+Private Function ErrHandler(ByVal FuncName As String, _
+                            Optional AddInfo As String, _
+                            Optional WinApiError, _
+                            Optional bLoud As Boolean = True, _
+                            Optional bErrLog As Boolean = True, _
+                            Optional vbDecor As VbMsgBoxStyle = vbOKOnly, _
+                            Optional bRetry As Boolean) As VbMsgBoxResult
+
+    If bRetry Then
+
+        ErrHandler = MessErrorRetry("XParser", FuncName, AddInfo, WinApiError, bErrLog)
+
+    Else
+
+        ErrHandler = MessError("XParser", FuncName, AddInfo, WinApiError, bLoud, bErrLog, vbDecor)
+
+    End If
+
+End Function
+
 

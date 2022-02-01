@@ -33,12 +33,17 @@ End Sub
 Public Property Get Country() As Country
     Set Country = m_Country
 End Property
-Public Property Set Country(value As Country)
-    Set m_Country = value
-    If Not m_Country.Cities.Contains(Me) Then
+Public Property Set Country(Value As Country)
+    Set m_Country = Value
+    If Not m_Country.Cities.ContainsObj(Me) Then
         m_Country.Cities.Add Me
     End If
 End Property
+
+Public Function ToStr() As String
+    'ToStr = Name & " " & name2
+    ToStr = Me.Key
+End Function
 
 Public Property Get Key() As String
     Dim k As String

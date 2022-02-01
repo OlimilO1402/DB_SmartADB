@@ -26,6 +26,10 @@ Private Sub Class_Initialize()
     Set Cities = MNew.List(vbObject)
 End Sub
 
+Public Function ToStr() As String
+    ToStr = Me.Key
+End Function
+
 Public Property Get Key() As String
     Key = Me.Name 'there are no 2 countries with the same name, are there?
 End Property

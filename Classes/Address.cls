@@ -30,10 +30,14 @@ Public Property Get City() As City
 End Property
 Public Property Set City(Value As City)
     Set m_City = Value
-    If Not m_City.Addresses.Contains(Me) Then
+    If Not m_City.Addresses.ContainsObj(Me) Then
         m_City.Addresses.Add Me
     End If
 End Property
+
+Public Function ToStr() As String
+    ToStr = Me.Key
+End Function
 
 Public Property Get Key() As String
     Key = Me.Street & " " & Me.HNr

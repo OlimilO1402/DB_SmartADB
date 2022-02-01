@@ -168,7 +168,7 @@ Sub UpdateData(obj As City)
             Dim i As Long: i = CmbCountry.ListIndex
             If i >= 0 Then
                 Set .Country = m_Countries.Item(i)
-                If Not .Country.Cities.Contains(obj) Then
+                If Not .Country.Cities.ContainsObj(obj) Then
                     .Country.Cities.Add obj
                 End If
             End If

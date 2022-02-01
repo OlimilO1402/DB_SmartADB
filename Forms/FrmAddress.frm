@@ -152,7 +152,7 @@ Sub UpdateData(obj As Address)
             Dim i As Long: i = CmbCity.ListIndex
             If i >= 0 Then
                 Set .City = m_Cities.Item(i)
-                If Not .City.Addresses.Contains(obj) Then
+                If Not .City.Addresses.ContainsObj(obj) Then
                     .City.Addresses.Add obj
                 End If
             End If

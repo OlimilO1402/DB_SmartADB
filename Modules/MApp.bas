@@ -1,13 +1,27 @@
 Attribute VB_Name = "Application"
 Option Explicit
+
+Private Const GW_OWNER As Long = 4
+
+Private Declare Function GetWindow Lib "user32" (ByVal hwnd As Long, ByVal wCmd As Long) As Long
+Private Declare Function GetClassName Lib "user32" Alias "GetClassNameA" (ByVal hwnd As Long, ByVal lpClassName As String, ByVal nMaxCount As Long) As Long
+Private Declare Function GetInstanceEx Lib "DirectCOM" (StrPtr_FName As Long, StrPtr_ClassName As Long, ByVal UseAlteredSearchPath As Boolean) As Object
+
 Public Declare Sub InitCommonControls Lib "comctl32" ()
-Public Const MyExt   As String = "icxadb"
-Public Const AppReg  As String = "MBO-Ing.com\SmartADB"
-Public Const AppName As String = "SmartADB"
+Public Const MyExt   As String = ".icxadb"
+Public Const AppExtReg As String = "SmartADB"
+Public Const AppName As String = "MBO-Ing.com\SmartADB"
 Public Const FIconId As Byte = 1 'for file-icon, prog-Icon-Id = 0
 Public Const DefaultFileName As String = "Addresses." & MyExt
 
+Public IsInIDE As Boolean
+
 Public Sub Main()
+    
+    IsInIDE = IsRunningInIDE(0)
+    
+    PrepareCOMCTL32dll
+    
     'Einstellungen lesen
     Settings.LoadSettings
     
@@ -43,28 +57,44 @@ Public Function IsValidFileExt(pfn As PathFileName) As Boolean
     'hier evtl weitere Dateiformate prüfen falls true dann gleich raus
 End Function
 
+Private Sub PrepareCOMCTL32dll()
+    If IsInIDE Then
+        'Set Constructor = New vbrichclient5.cConstructor
+    Else
+        Dim pfn As PathFileName: Set pfn = MNew.PathFileName(App.path, "DirectCOM.dll")
+        'sVBRC5pfn = App.path
+        'If Right(sVBRC5pfn, 1) <> "\" Then sVBRC5pfn = sVBRC5pfn & "\"
+        'Debug.Print sVBRC5pfn
+        If Not pfn.Exists() Then MsgBox "konnte die Datei nicht finden:" & vbCrLf & pfn.Value
+        pfn.FileName = "COMCTL32.ocx"
+        If Not pfn.Exists() Then MsgBox "konnte die Datei nicht finden:" & vbCrLf & pfn.Value
+        'Set Constructor = GetInstanceEx(StrPtr(sVBRC5pfn), StrPtr("cConstructor"), True)
+        Dim pnl As ComctlLib.Panel: Set pnl = GetInstanceEx(StrPtr(pfn.Value), StrPtr("Panel"), True)
+    End If
+End Sub
 Public Sub RegisterExt()
-    RegisterShellFileTypes MyExt, AppReg, AppName, App.Path & "\" & AppName & ".exe", FIconId
+    RegisterShellFileTypes MyExt, AppExtReg, AppName, App.path & "\" & AppName & ".exe", FIconId
 End Sub
 
 Public Sub UnRegisterExt()
-    UnRegisterShellFileTypes MyExt, AppReg
+    UnRegisterShellFileTypes MyExt, AppExtReg
 End Sub
 
 Public Function GetFilter() As String
-    GetFilter = MyExt & "-Dateien [*." & MyExt & "]|*." & MyExt & "|ifc-Dateien [*.ifc]|*.ifc|Textdateien [*.txt]|*.txt|Alle Dateien [*.*]|*.*"
+    GetFilter = MyExt & "-Dateien [*" & MyExt & "]|*" & MyExt & "|ifc-Dateien [*.ifc]|*.ifc|Textdateien [*.txt]|*.txt|Alle Dateien [*.*]|*.*"
 End Function
 
 Public Function OpenFileName_ShowDlg(ByRef pfn_inout As PathFileName) As VbMsgBoxResult
 'Try: On Error GoTo Catch
     Dim OFD As OpenFileDialog: Set OFD = New OpenFileDialog
     With OFD
-        .InitialDirectory = App.Path
+        .InitialDirectory = App.path
         If Not pfn_inout Is Nothing Then
             .FileName = pfn_inout.Value
         End If
         .Filter = GetFilter
         OpenFileName_ShowDlg = .ShowDialog
+        Set pfn_inout = MNew.PathFileName(.FileName)
     End With
 '    With FMain.FileDlg
 '        .InitDir = App.Path
@@ -102,7 +132,7 @@ Public Function SaveFileName_ShowDlg(ByRef pfn_inout As PathFileName) As VbMsgBo
 'Try: On Error GoTo Catch
     Dim SFD As SaveFileDialog: Set SFD = New SaveFileDialog
     With SFD
-        .InitialDirectory = App.Path
+        .InitialDirectory = App.path
         If Not pfn_inout Is Nothing Then
             .FileName = pfn_inout.Value
         End If
@@ -134,5 +164,27 @@ Public Function SaveFileName_ShowDlg(ByRef pfn_inout As PathFileName) As VbMsgBo
 '    SaveFileName_ShowDlg = vbOK
 '    Exit Function
 'Catch: SaveFileName_ShowDlg = vbCancel
+End Function
+
+
+'Public Function IsInIDE() As Boolean
+'Try: On Error GoTo Catch
+'    Debug.Print 1 / 0
+'    Exit Function
+'Catch: IsInIDE = True
+'End Function
+Public Function IsRunningInIDE(ByVal ahWnd As Long) As Boolean
+'Private Function IsInIDE() As Boolean
+    'evtl hier die Länge des Srings vergrößern:
+    Dim Buffer     As String:     Buffer = Space(128)
+    Dim ParenthWnd As Long:   ParenthWnd = GetWindow(ahWnd, GW_OWNER)
+    Call GetClassName(ParenthWnd, Buffer, Len(Buffer))
+
+    IsRunningInIDE = (LCase(Left(Buffer, 11)) = "thundermain")
+    'If LCase(Left(Buffer, 11)) = "thundermain" Then
+    '    IsRunningInIDE = True
+    'Else
+    '    IsRunningInIDE = False
+    'End If
 End Function
 

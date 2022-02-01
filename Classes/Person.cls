@@ -47,10 +47,10 @@ Public Property Get Mother() As Person
 End Property
 Public Property Set Mother(Value As Person)
     If Value Is Nothing Then
-        If Not m_Mother Is Nothing Then m_Mother.Children.Remove Me
+        If Not m_Mother Is Nothing Then m_Mother.Children.RemoveObj Me
     Else
         Set m_Mother = Value
-        If Not m_Mother.Children.Contains(Me) Then
+        If Not m_Mother.Children.ContainsObj(Me) Then
             m_Mother.Children.Add Me
         End If
     End If
@@ -61,14 +61,18 @@ Public Property Get Father() As Person
 End Property
 Public Property Set Father(Value As Person)
     If Value Is Nothing Then
-        If Not m_Father Is Nothing Then m_Father.Children.Remove Me
+        If Not m_Father Is Nothing Then m_Father.Children.RemoveObj Me
     Else
         Set m_Father = Value
-        If Not m_Father.Children.Contains(Me) Then
+        If Not m_Father.Children.ContainsObj(Me) Then
             m_Father.Children.Add Me
         End If
     End If
 End Property
+
+Public Function ToStr() As String
+    ToStr = Me.Key
+End Function
 
 Public Property Get Key() As String
     Key = Me.FamName & " " & Me.PreName1

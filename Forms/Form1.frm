@@ -36,79 +36,66 @@ Begin VB.Form FMain
       BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
          NumButtons      =   13
          BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "Start a new database"
             Object.Tag             =   "New"
             ImageIndex      =   1
          EndProperty
          BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "Open an existing database"
             Object.Tag             =   "Open"
             ImageIndex      =   2
          EndProperty
          BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "Save the current database"
             Object.Tag             =   "Save"
             ImageIndex      =   3
          EndProperty
          BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
             MixedState      =   -1  'True
          EndProperty
          BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "Print the database"
             Object.Tag             =   "Print"
             ImageIndex      =   4
          EndProperty
          BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "Load the database in text-editor"
             Object.Tag             =   "Edit"
             ImageIndex      =   5
          EndProperty
          BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
             MixedState      =   -1  'True
          EndProperty
          BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "Cut to clipboard"
             Object.Tag             =   "Cut"
             ImageIndex      =   6
          EndProperty
          BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "Copy to Clipboard"
             Object.Tag             =   "Copy"
             ImageIndex      =   7
          EndProperty
          BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "Paste data from clipboard"
             Object.Tag             =   "Paste"
             ImageIndex      =   8
          EndProperty
          BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
             MixedState      =   -1  'True
          EndProperty
          BeginProperty Button12 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "Undo the last edit step"
             Object.Tag             =   "Undo"
             ImageIndex      =   9
          EndProperty
          BeginProperty Button13 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "Redo the last undo step"
             Object.Tag             =   "Redo"
             ImageIndex      =   10
@@ -168,68 +155,57 @@ Begin VB.Form FMain
             BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
                NumButtons      =   11
                BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "New"
                   Object.Tag             =   "AddNew"
                   ImageIndex      =   1
                EndProperty
                BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Insert"
                   Object.Tag             =   "InsertNew"
                   ImageIndex      =   2
                EndProperty
                BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Edit"
                   Object.Tag             =   "EditSave"
                   ImageIndex      =   3
                EndProperty
                BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Delete"
                   Object.Tag             =   "Delete"
                   ImageIndex      =   4
                EndProperty
                BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.Tag             =   ""
                   Style           =   3
                   MixedState      =   -1  'True
                EndProperty
                BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Move up"
                   Object.Tag             =   "MoveUp"
                   ImageIndex      =   5
                EndProperty
                BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Move down"
                   Object.Tag             =   "MoveDown"
                   ImageIndex      =   6
                EndProperty
                BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Sort up"
                   Object.Tag             =   "SortUp"
                   ImageIndex      =   7
                EndProperty
                BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Sort down"
                   Object.Tag             =   "SortDown"
                   ImageIndex      =   8
                EndProperty
                BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.Tag             =   ""
                   Style           =   3
                   Object.Width           =   2150
                   MixedState      =   -1  'True
                EndProperty
                BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Suchen"
                   Object.Tag             =   "Search"
                   ImageIndex      =   9
@@ -334,61 +310,51 @@ Begin VB.Form FMain
                BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
                   NumButtons      =   11
                   BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   ""
                      Object.ToolTipText     =   "New"
                      Object.Tag             =   "AddNew"
                      ImageIndex      =   1
                   EndProperty
                   BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   ""
                      Object.ToolTipText     =   "Insert"
                      Object.Tag             =   "InsertNew"
                      ImageIndex      =   2
                   EndProperty
                   BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   ""
                      Object.ToolTipText     =   "Edit"
                      Object.Tag             =   "EditSave"
                      ImageIndex      =   3
                   EndProperty
                   BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   ""
                      Object.ToolTipText     =   "Delete"
                      Object.Tag             =   "Delete"
                      ImageIndex      =   4
                   EndProperty
                   BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   ""
                      Object.Tag             =   ""
                      Style           =   3
                      MixedState      =   -1  'True
                   EndProperty
                   BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   ""
                      Object.ToolTipText     =   "Move up"
                      Object.Tag             =   "MoveUp"
                      ImageIndex      =   5
                   EndProperty
                   BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   ""
                      Object.ToolTipText     =   "Move down"
                      Object.Tag             =   "MoveDown"
                      ImageIndex      =   6
                   EndProperty
                   BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   ""
                      Object.ToolTipText     =   "Sort up"
                      Object.Tag             =   "SortUp"
                      ImageIndex      =   7
                   EndProperty
                   BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   ""
                      Object.ToolTipText     =   "Sort down"
                      Object.Tag             =   "SortDown"
                      ImageIndex      =   8
                   EndProperty
                   BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   ""
                      Object.Tag             =   ""
                      Style           =   3
                      Object.Width           =   2150
@@ -434,13 +400,11 @@ Begin VB.Form FMain
                NumTabs         =   2
                BeginProperty Tab1 {0713F341-850A-101B-AFC0-4210102A8DA7} 
                   Caption         =   "Kinder"
-                  Key             =   ""
                   Object.Tag             =   ""
                   ImageVarType    =   2
                EndProperty
                BeginProperty Tab2 {0713F341-850A-101B-AFC0-4210102A8DA7} 
                   Caption         =   "Freunde"
-                  Key             =   ""
                   Object.Tag             =   ""
                   ImageVarType    =   2
                EndProperty
@@ -623,96 +587,6 @@ Begin VB.Form FMain
          TabIndex        =   35
          Top             =   0
          Width           =   5775
-         Begin ComctlLib.Toolbar TlbCity 
-            Height          =   390
-            Left            =   120
-            TabIndex        =   36
-            Top             =   450
-            Width           =   5520
-            _ExtentX        =   9737
-            _ExtentY        =   688
-            ButtonWidth     =   635
-            ButtonHeight    =   582
-            ImageList       =   "ILDataTlb"
-            _Version        =   327682
-            BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
-               NumButtons      =   11
-               BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "New"
-                  Object.Tag             =   "AddNew"
-                  ImageIndex      =   1
-               EndProperty
-               BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Insert"
-                  Object.Tag             =   "InsertNew"
-                  ImageIndex      =   2
-               EndProperty
-               BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Edit"
-                  Object.Tag             =   "EditSave"
-                  ImageIndex      =   3
-               EndProperty
-               BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Delete"
-                  Object.Tag             =   "Delete"
-                  ImageIndex      =   4
-               EndProperty
-               BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.Tag             =   ""
-                  Style           =   3
-                  MixedState      =   -1  'True
-               EndProperty
-               BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Move up"
-                  Object.Tag             =   "MoveUp"
-                  ImageIndex      =   5
-               EndProperty
-               BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Move down"
-                  Object.Tag             =   "MoveDown"
-                  ImageIndex      =   6
-               EndProperty
-               BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Sort up"
-                  Object.Tag             =   "SortUp"
-                  ImageIndex      =   7
-               EndProperty
-               BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Sort down"
-                  Object.Tag             =   "SortDown"
-                  ImageIndex      =   8
-               EndProperty
-               BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.Tag             =   ""
-                  Style           =   3
-                  MixedState      =   -1  'True
-               EndProperty
-               BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Suchen"
-                  Object.Tag             =   "Search"
-                  ImageIndex      =   9
-               EndProperty
-            EndProperty
-            Begin VB.TextBox Text2 
-               Height          =   330
-               Left            =   3480
-               TabIndex        =   43
-               Text            =   "Suche"
-               Top             =   30
-               Width           =   2010
-            End
-         End
          Begin ComctlLib.Toolbar TlbTelNr 
             Height          =   390
             Left            =   120
@@ -728,67 +602,56 @@ Begin VB.Form FMain
             BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
                NumButtons      =   11
                BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "New"
                   Object.Tag             =   "AddNew"
                   ImageIndex      =   1
                EndProperty
                BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Insert"
                   Object.Tag             =   "InsertNew"
                   ImageIndex      =   2
                EndProperty
                BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Edit"
                   Object.Tag             =   "EditSave"
                   ImageIndex      =   3
                EndProperty
                BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Delete"
                   Object.Tag             =   "Delete"
                   ImageIndex      =   4
                EndProperty
                BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.Tag             =   ""
                   Style           =   3
                   MixedState      =   -1  'True
                EndProperty
                BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Move up"
                   Object.Tag             =   "MoveUp"
                   ImageIndex      =   5
                EndProperty
                BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Move down"
                   Object.Tag             =   "MoveDown"
                   ImageIndex      =   6
                EndProperty
                BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Sort up"
                   Object.Tag             =   "SortUp"
                   ImageIndex      =   7
                EndProperty
                BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Sort down"
                   Object.Tag             =   "SortDown"
                   ImageIndex      =   8
                EndProperty
                BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.Tag             =   ""
                   Style           =   3
                   MixedState      =   -1  'True
                EndProperty
                BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Suchen"
                   Object.Tag             =   "Search"
                   ImageIndex      =   9
@@ -798,6 +661,85 @@ Begin VB.Form FMain
                Height          =   330
                Left            =   3480
                TabIndex        =   45
+               Text            =   "Suche"
+               Top             =   30
+               Width           =   2010
+            End
+         End
+         Begin ComctlLib.Toolbar TlbCity 
+            Height          =   390
+            Left            =   120
+            TabIndex        =   36
+            Top             =   450
+            Width           =   5520
+            _ExtentX        =   9737
+            _ExtentY        =   688
+            ButtonWidth     =   635
+            ButtonHeight    =   582
+            ImageList       =   "ILDataTlb"
+            _Version        =   327682
+            BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
+               NumButtons      =   11
+               BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "New"
+                  Object.Tag             =   "AddNew"
+                  ImageIndex      =   1
+               EndProperty
+               BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Insert"
+                  Object.Tag             =   "InsertNew"
+                  ImageIndex      =   2
+               EndProperty
+               BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Edit"
+                  Object.Tag             =   "EditSave"
+                  ImageIndex      =   3
+               EndProperty
+               BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Delete"
+                  Object.Tag             =   "Delete"
+                  ImageIndex      =   4
+               EndProperty
+               BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.Tag             =   ""
+                  Style           =   3
+                  MixedState      =   -1  'True
+               EndProperty
+               BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Move up"
+                  Object.Tag             =   "MoveUp"
+                  ImageIndex      =   5
+               EndProperty
+               BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Move down"
+                  Object.Tag             =   "MoveDown"
+                  ImageIndex      =   6
+               EndProperty
+               BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Sort up"
+                  Object.Tag             =   "SortUp"
+                  ImageIndex      =   7
+               EndProperty
+               BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Sort down"
+                  Object.Tag             =   "SortDown"
+                  ImageIndex      =   8
+               EndProperty
+               BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.Tag             =   ""
+                  Style           =   3
+                  MixedState      =   -1  'True
+               EndProperty
+               BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Suchen"
+                  Object.Tag             =   "Search"
+                  ImageIndex      =   9
+               EndProperty
+            EndProperty
+            Begin VB.TextBox Text2 
+               Height          =   330
+               Left            =   3480
+               TabIndex        =   43
                Text            =   "Suche"
                Top             =   30
                Width           =   2010
@@ -868,96 +810,6 @@ Begin VB.Form FMain
          TabIndex        =   28
          Top             =   0
          Width           =   5775
-         Begin ComctlLib.Toolbar TlbCountry 
-            Height          =   390
-            Left            =   120
-            TabIndex        =   29
-            Top             =   450
-            Width           =   5520
-            _ExtentX        =   9737
-            _ExtentY        =   688
-            ButtonWidth     =   635
-            ButtonHeight    =   582
-            ImageList       =   "ILDataTlb"
-            _Version        =   327682
-            BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
-               NumButtons      =   11
-               BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "New"
-                  Object.Tag             =   "AddNew"
-                  ImageIndex      =   1
-               EndProperty
-               BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Insert"
-                  Object.Tag             =   "InsertNew"
-                  ImageIndex      =   2
-               EndProperty
-               BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Edit"
-                  Object.Tag             =   "EditSave"
-                  ImageIndex      =   3
-               EndProperty
-               BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Delete"
-                  Object.Tag             =   "Delete"
-                  ImageIndex      =   4
-               EndProperty
-               BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.Tag             =   ""
-                  Style           =   3
-                  MixedState      =   -1  'True
-               EndProperty
-               BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Move up"
-                  Object.Tag             =   "MoveUp"
-                  ImageIndex      =   5
-               EndProperty
-               BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Move down"
-                  Object.Tag             =   "MoveDown"
-                  ImageIndex      =   6
-               EndProperty
-               BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Sort up"
-                  Object.Tag             =   "SortUp"
-                  ImageIndex      =   7
-               EndProperty
-               BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Sort down"
-                  Object.Tag             =   "SortDown"
-                  ImageIndex      =   8
-               EndProperty
-               BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.Tag             =   ""
-                  Style           =   3
-                  MixedState      =   -1  'True
-               EndProperty
-               BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
-                  Object.ToolTipText     =   "Suchen"
-                  Object.Tag             =   "Search"
-                  ImageIndex      =   9
-               EndProperty
-            EndProperty
-            Begin VB.TextBox Text1 
-               Height          =   330
-               Left            =   3480
-               TabIndex        =   42
-               Text            =   "Suche"
-               Top             =   30
-               Width           =   2010
-            End
-         End
          Begin ComctlLib.Toolbar TlbAddress 
             Height          =   390
             Left            =   120
@@ -973,67 +825,56 @@ Begin VB.Form FMain
             BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
                NumButtons      =   11
                BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "New"
                   Object.Tag             =   "AddNew"
                   ImageIndex      =   1
                EndProperty
                BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Insert"
                   Object.Tag             =   "InsertNew"
                   ImageIndex      =   2
                EndProperty
                BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Edit"
                   Object.Tag             =   "EditSave"
                   ImageIndex      =   3
                EndProperty
                BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Delete"
                   Object.Tag             =   "Delete"
                   ImageIndex      =   4
                EndProperty
                BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.Tag             =   ""
                   Style           =   3
                   MixedState      =   -1  'True
                EndProperty
                BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Move up"
                   Object.Tag             =   "MoveUp"
                   ImageIndex      =   5
                EndProperty
                BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Move down"
                   Object.Tag             =   "MoveDown"
                   ImageIndex      =   6
                EndProperty
                BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Sort up"
                   Object.Tag             =   "SortUp"
                   ImageIndex      =   7
                EndProperty
                BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Sort down"
                   Object.Tag             =   "SortDown"
                   ImageIndex      =   8
                EndProperty
                BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.Tag             =   ""
                   Style           =   3
                   MixedState      =   -1  'True
                EndProperty
                BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Key             =   ""
                   Object.ToolTipText     =   "Suchen"
                   Object.Tag             =   "Search"
                   ImageIndex      =   9
@@ -1043,6 +884,85 @@ Begin VB.Form FMain
                Height          =   330
                Left            =   3480
                TabIndex        =   44
+               Text            =   "Suche"
+               Top             =   30
+               Width           =   2010
+            End
+         End
+         Begin ComctlLib.Toolbar TlbCountry 
+            Height          =   390
+            Left            =   120
+            TabIndex        =   29
+            Top             =   450
+            Width           =   5520
+            _ExtentX        =   9737
+            _ExtentY        =   688
+            ButtonWidth     =   635
+            ButtonHeight    =   582
+            ImageList       =   "ILDataTlb"
+            _Version        =   327682
+            BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
+               NumButtons      =   11
+               BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "New"
+                  Object.Tag             =   "AddNew"
+                  ImageIndex      =   1
+               EndProperty
+               BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Insert"
+                  Object.Tag             =   "InsertNew"
+                  ImageIndex      =   2
+               EndProperty
+               BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Edit"
+                  Object.Tag             =   "EditSave"
+                  ImageIndex      =   3
+               EndProperty
+               BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Delete"
+                  Object.Tag             =   "Delete"
+                  ImageIndex      =   4
+               EndProperty
+               BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.Tag             =   ""
+                  Style           =   3
+                  MixedState      =   -1  'True
+               EndProperty
+               BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Move up"
+                  Object.Tag             =   "MoveUp"
+                  ImageIndex      =   5
+               EndProperty
+               BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Move down"
+                  Object.Tag             =   "MoveDown"
+                  ImageIndex      =   6
+               EndProperty
+               BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Sort up"
+                  Object.Tag             =   "SortUp"
+                  ImageIndex      =   7
+               EndProperty
+               BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Sort down"
+                  Object.Tag             =   "SortDown"
+                  ImageIndex      =   8
+               EndProperty
+               BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.Tag             =   ""
+                  Style           =   3
+                  MixedState      =   -1  'True
+               EndProperty
+               BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Suchen"
+                  Object.Tag             =   "Search"
+                  ImageIndex      =   9
+               EndProperty
+            EndProperty
+            Begin VB.TextBox Text1 
+               Height          =   330
+               Left            =   3480
+               TabIndex        =   42
                Text            =   "Suche"
                Top             =   30
                Width           =   2010
@@ -1351,13 +1271,13 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub Form_Resize()
-    Dim l As Single: l = 0
+    Dim L As Single: L = 0
     Dim T As Single: T = PnlPersons.Top
     Dim W As Single: W = Me.ScaleWidth
     Dim H As Single: H = Me.ScaleHeight
     If W > 0 And H > 0 Then
-        PnlPersons.Move l, T, W, H
-        PnlCCAT.Move l, T, W, H
+        PnlPersons.Move L, T, W, H
+        PnlCCAT.Move L, T, W, H
     End If
 End Sub
 
@@ -1368,14 +1288,14 @@ End Sub
 
 Private Sub PnlPersonList_Resize()
     Dim brdr As Single: brdr = Screen.TwipsPerPixelX * 8
-    Dim l  As Single, T  As Single, W  As Single, H  As Single
+    Dim L  As Single, T  As Single, W  As Single, H  As Single
     Dim L1 As Single, T1 As Single, W1 As Single, H1 As Single
-    l = brdr: T = brdr
-    LblPersons.Move l, T
+    L = brdr: T = brdr
+    LblPersons.Move L, T
     T = T + LblPersons.Height
-    W = PnlPersonList.ScaleWidth - l
+    W = PnlPersonList.ScaleWidth - L
     If W > 0 Then
-        TlbPersons.Move l, T, W
+        TlbPersons.Move L, T, W
         Dim btn As Button: Set btn = TlbPersons.Buttons.Item(11)
         L1 = btn.Left + btn.Width
         T1 = btn.Top
@@ -1390,13 +1310,13 @@ Private Sub PnlPersonList_Resize()
     'Debug.Print TlbPersons.Height
     H = PnlPersonList.ScaleHeight - T - 3 * brdr 'wieso 3 * brdr?
     If W > 0 And H > 0 Then
-        LstPerson.Move l, T, W, H
+        LstPerson.Move L, T, W, H
     End If
 End Sub
 Private Sub PnlPersonDetail_Resize()
     Dim brdr As Single: brdr = 8 * Screen.TwipsPerPixelX
-    Dim l As Single, T As Single, W As Single, H As Single
-    l = brdr
+    Dim L As Single, T As Single, W As Single, H As Single
+    L = brdr
     W = Max(W, LblName.Width)
     W = Max(W, LblName2.Width)
     W = Max(W, LblFamName.Width)
@@ -1407,56 +1327,56 @@ Private Sub PnlPersonDetail_Resize()
     W = Max(W, LblAddress.Width)
     W = Max(W, LblTelefonNr.Width)
     'W = 1365
-    l = brdr + W + brdr
+    L = brdr + W + brdr
     H = 345
-    W = PnlPersonDetail.Width - l - brdr
-    T = LblName.Top:      If W > 0 And H > 0 Then TxtName.Move l, T, W ', H
-    T = LblName2.Top:     If W > 0 And H > 0 Then TxtName2.Move l, T, W ', H
-    T = LblFamName.Top:   If W > 0 And H > 0 Then TxtFamName.Move l, T, W ', H
-    T = LblBirthD.Top:    If W > 0 And H > 0 Then TxtBirthD.Move l, T, W ', H
-    T = LblGender.Top:    If W > 0 And H > 0 Then CmbPersonGender.Move l, T, W ', H
-    T = LblMother.Top:    If W > 0 And H > 0 Then CmbMother.Move l, T, W ', H
-    T = LblFather.Top:    If W > 0 And H > 0 Then CmbFather.Move l, T, W ', H
-    T = LblAddress.Top:   If W > 0 And H > 0 Then CmbAddress.Move l, T, W ', H
-    T = LblTelefonNr.Top: If W > 0 And H > 0 Then CmbTelefonNr.Move l, T, W ', H
+    W = PnlPersonDetail.Width - L - brdr
+    T = LblName.Top:      If W > 0 And H > 0 Then TxtName.Move L, T, W ', H
+    T = LblName2.Top:     If W > 0 And H > 0 Then TxtName2.Move L, T, W ', H
+    T = LblFamName.Top:   If W > 0 And H > 0 Then TxtFamName.Move L, T, W ', H
+    T = LblBirthD.Top:    If W > 0 And H > 0 Then TxtBirthD.Move L, T, W ', H
+    T = LblGender.Top:    If W > 0 And H > 0 Then CmbPersonGender.Move L, T, W ', H
+    T = LblMother.Top:    If W > 0 And H > 0 Then CmbMother.Move L, T, W ', H
+    T = LblFather.Top:    If W > 0 And H > 0 Then CmbFather.Move L, T, W ', H
+    T = LblAddress.Top:   If W > 0 And H > 0 Then CmbAddress.Move L, T, W ', H
+    T = LblTelefonNr.Top: If W > 0 And H > 0 Then CmbTelefonNr.Move L, T, W ', H
     T = T + 480
-    l = brdr
-    W = PnlPersonDetail.ScaleWidth - l - brdr
+    L = brdr
+    W = PnlPersonDetail.ScaleWidth - L - brdr
     H = PnlPersonDetail.Height - T
     If W > 0 And H > 0 Then
-        TSFamFrnds.Move l, T, W, H
+        TSFamFrnds.Move L, T, W, H
         PnlTabChildren.BorderStyle = 0 ' Kein
         PnlTabFriends.BorderStyle = 0  ' Kein
         T = T + 480
         H = H - 480
-        Debug.Print l; T; W; H
-        PnlTabChildren.Move l, T, W, H
-        PnlTabFriends.Move l, T, W, H
+        'Debug.Print L; T; W; H
+        PnlTabChildren.Move L, T, W, H
+        PnlTabFriends.Move L, T, W, H
         
     End If
     
 End Sub
 Private Sub PnlTabChildren_Resize()
     Dim brdr As Single: brdr = 8 * Screen.TwipsPerPixelX
-    Dim l As Single, T As Single, W As Single, H As Single
-    l = 0 'brdr
+    Dim L As Single, T As Single, W As Single, H As Single
+    L = 0 'brdr
     T = 0
     W = PnlTabChildren.Width
     H = PnlTabChildren.ScaleHeight - 3 * brdr
     If W > 0 And H > 0 Then
-        LstChildren.Move l, T, W, H
+        LstChildren.Move L, T, W, H
     End If
 End Sub
 Private Sub PnlTabFriends_Resize()
     Dim brdr As Single: brdr = 8 * Screen.TwipsPerPixelX
-    Dim l  As Single, T  As Single, W  As Single, H  As Single
+    Dim L  As Single, T  As Single, W  As Single, H  As Single
     Dim L1 As Single, T1 As Single, W1 As Single, H1 As Single
-    l = 0 'brdr
+    L = 0 'brdr
     T = 0
     W = PnlTabChildren.Width
     H = PnlTabChildren.ScaleHeight - 3 * brdr
     If W > 0 And H > 0 Then
-        TlbPersonFriends.Move l, T, W ', H
+        TlbPersonFriends.Move L, T, W ', H
         Dim btn As Button: Set btn = TlbPersonFriends.Buttons.Item(11)
         L1 = btn.Left + btn.Width
         T1 = btn.Top
@@ -1469,7 +1389,7 @@ Private Sub PnlTabFriends_Resize()
     T = T + TlbPersonFriends.Height
     H = H - T
     If W > 0 And H > 0 Then
-        LstFriends.Move l, T, W, H
+        LstFriends.Move L, T, W, H
     End If
     
     
