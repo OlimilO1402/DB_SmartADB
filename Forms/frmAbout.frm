@@ -186,7 +186,7 @@ SysInfoErr:
     MsgBox "Systeminformationen sind momentan nicht verfügbar", vbOKOnly
 End Sub
 
-Public Function GetKeyValue(KeyRoot As Long, KeyName As String, SubKeyRef As String, ByRef KeyVal As String) As Boolean
+Public Function GetKeyValue(KeyRoot As Long, keyName As String, SubKeyRef As String, ByRef KeyVal As String) As Boolean
     Dim i As Long                                           ' Schleifenzähler
     Dim rc As Long                                          ' Rückgabe-Code
     Dim hKey As Long                                        ' Zugriffsnummer für einen offenen Registrierungsschlüssel
@@ -197,7 +197,7 @@ Public Function GetKeyValue(KeyRoot As Long, KeyName As String, SubKeyRef As Str
     '------------------------------------------------------------
     ' Registrierungsschlüssel unter KeyRoot {HKEY_LOCAL_MACHINE...} öffnen
     '------------------------------------------------------------
-    rc = RegOpenKeyEx(KeyRoot, KeyName, 0, KEY_ALL_ACCESS, hKey) ' Registrierungsschlüssel öffnen
+    rc = RegOpenKeyEx(KeyRoot, keyName, 0, KEY_ALL_ACCESS, hKey) ' Registrierungsschlüssel öffnen
     
     If (rc <> ERROR_SUCCESS) Then GoTo GetKeyError          ' Fehler behandeln...
     

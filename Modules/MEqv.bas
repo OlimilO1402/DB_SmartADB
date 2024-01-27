@@ -85,10 +85,10 @@ Public Function Eqv_Test(Obj1 As Test, Obj2 As Test) As Boolean
     Eqv_Test = True
 End Function
 
-Public Function Max(V1, V2)
-    If V1 > V2 Then Max = V1 Else Max = V2
-End Function
-Public Function Min(V1, V2)
-    If V1 < V2 Then Min = V1 Else Min = V2
-End Function
-
+'Public Function Max(V1, V2)
+'    If V1 > V2 Then Max = V1 Else Max = V2
+'End Function
+'Public Function Min(V1, V2)
+'    If V1 < V2 Then Min = V1 Else Min = V2
+'End Function
+'

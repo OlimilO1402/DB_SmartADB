@@ -118,453 +118,6 @@ Begin VB.Form FMain
          Width           =   1335
       End
    End
-   Begin VB.PictureBox PnlPersons 
-      Appearance      =   0  '2D
-      ForeColor       =   &H80000008&
-      Height          =   9255
-      Left            =   0
-      ScaleHeight     =   9225
-      ScaleWidth      =   11745
-      TabIndex        =   1
-      Top             =   360
-      Width           =   11775
-      Begin VB.PictureBox PnlPersonList 
-         Appearance      =   0  '2D
-         BackColor       =   &H80000005&
-         BorderStyle     =   0  'Kein
-         ForeColor       =   &H80000008&
-         Height          =   9135
-         Left            =   0
-         ScaleHeight     =   9135
-         ScaleWidth      =   5655
-         TabIndex        =   24
-         Top             =   0
-         Width           =   5655
-         Begin ComctlLib.Toolbar TlbPersons 
-            Height          =   390
-            Left            =   120
-            TabIndex        =   25
-            Top             =   450
-            Width           =   5520
-            _ExtentX        =   9737
-            _ExtentY        =   688
-            ButtonWidth     =   635
-            ButtonHeight    =   582
-            ImageList       =   "ILDataTlb"
-            _Version        =   327682
-            BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
-               NumButtons      =   11
-               BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.ToolTipText     =   "New"
-                  Object.Tag             =   "AddNew"
-                  ImageIndex      =   1
-               EndProperty
-               BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.ToolTipText     =   "Insert"
-                  Object.Tag             =   "InsertNew"
-                  ImageIndex      =   2
-               EndProperty
-               BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.ToolTipText     =   "Edit"
-                  Object.Tag             =   "EditSave"
-                  ImageIndex      =   3
-               EndProperty
-               BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.ToolTipText     =   "Delete"
-                  Object.Tag             =   "Delete"
-                  ImageIndex      =   4
-               EndProperty
-               BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.Tag             =   ""
-                  Style           =   3
-                  MixedState      =   -1  'True
-               EndProperty
-               BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.ToolTipText     =   "Move up"
-                  Object.Tag             =   "MoveUp"
-                  ImageIndex      =   5
-               EndProperty
-               BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.ToolTipText     =   "Move down"
-                  Object.Tag             =   "MoveDown"
-                  ImageIndex      =   6
-               EndProperty
-               BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.ToolTipText     =   "Sort up"
-                  Object.Tag             =   "SortUp"
-                  ImageIndex      =   7
-               EndProperty
-               BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.ToolTipText     =   "Sort down"
-                  Object.Tag             =   "SortDown"
-                  ImageIndex      =   8
-               EndProperty
-               BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.Tag             =   ""
-                  Style           =   3
-                  Object.Width           =   2150
-                  MixedState      =   -1  'True
-               EndProperty
-               BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                  Object.ToolTipText     =   "Suchen"
-                  Object.Tag             =   "Search"
-                  ImageIndex      =   9
-               EndProperty
-            EndProperty
-            Begin VB.TextBox TxtSearchPerson 
-               Height          =   330
-               Left            =   3480
-               TabIndex        =   53
-               Text            =   "Suche"
-               Top             =   30
-               Width           =   2010
-            End
-         End
-         Begin VB.ListBox LstPerson 
-            Height          =   8160
-            ItemData        =   "Form1.frx":163F2
-            Left            =   120
-            List            =   "Form1.frx":163F4
-            OLEDragMode     =   1  'Automatisch
-            OLEDropMode     =   1  'Manuell
-            TabIndex        =   26
-            Top             =   840
-            Width           =   5520
-         End
-         Begin VB.Label LblPersons 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Personen"
-            BeginProperty Font 
-               Name            =   "Consolas"
-               Size            =   14.25
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   330
-            Left            =   120
-            TabIndex        =   27
-            Top             =   120
-            Width           =   1200
-         End
-      End
-      Begin VB.PictureBox PnlPersonDetail 
-         Appearance      =   0  '2D
-         BackColor       =   &H80000005&
-         BorderStyle     =   0  'Kein
-         ForeColor       =   &H80000008&
-         Height          =   9015
-         Left            =   5760
-         ScaleHeight     =   9015
-         ScaleWidth      =   5895
-         TabIndex        =   5
-         Top             =   0
-         Width           =   5895
-         Begin VB.PictureBox PnlTabChildren 
-            Appearance      =   0  '2D
-            BackColor       =   &H80000005&
-            ForeColor       =   &H80000008&
-            Height          =   3975
-            Left            =   120
-            ScaleHeight     =   3945
-            ScaleWidth      =   5385
-            TabIndex        =   47
-            Top             =   5040
-            Width           =   5415
-            Begin VB.ListBox LstChildren 
-               Height          =   3660
-               ItemData        =   "Form1.frx":163F6
-               Left            =   0
-               List            =   "Form1.frx":163F8
-               TabIndex        =   52
-               Top             =   0
-               Width           =   5520
-            End
-         End
-         Begin VB.PictureBox PnlTabFriends 
-            Appearance      =   0  '2D
-            BackColor       =   &H80000005&
-            ForeColor       =   &H80000008&
-            Height          =   3855
-            Left            =   120
-            ScaleHeight     =   3825
-            ScaleWidth      =   5505
-            TabIndex        =   48
-            Top             =   5040
-            Width           =   5535
-            Begin ComctlLib.Toolbar TlbPersonFriends 
-               Height          =   390
-               Left            =   0
-               TabIndex        =   50
-               Top             =   0
-               Width           =   5535
-               _ExtentX        =   9763
-               _ExtentY        =   688
-               ButtonWidth     =   635
-               ButtonHeight    =   582
-               ImageList       =   "ILDataTlb"
-               _Version        =   327682
-               BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
-                  NumButtons      =   11
-                  BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Object.ToolTipText     =   "New"
-                     Object.Tag             =   "AddNew"
-                     ImageIndex      =   1
-                  EndProperty
-                  BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Object.ToolTipText     =   "Insert"
-                     Object.Tag             =   "InsertNew"
-                     ImageIndex      =   2
-                  EndProperty
-                  BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Object.ToolTipText     =   "Edit"
-                     Object.Tag             =   "EditSave"
-                     ImageIndex      =   3
-                  EndProperty
-                  BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Object.ToolTipText     =   "Delete"
-                     Object.Tag             =   "Delete"
-                     ImageIndex      =   4
-                  EndProperty
-                  BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Object.Tag             =   ""
-                     Style           =   3
-                     MixedState      =   -1  'True
-                  EndProperty
-                  BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Object.ToolTipText     =   "Move up"
-                     Object.Tag             =   "MoveUp"
-                     ImageIndex      =   5
-                  EndProperty
-                  BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Object.ToolTipText     =   "Move down"
-                     Object.Tag             =   "MoveDown"
-                     ImageIndex      =   6
-                  EndProperty
-                  BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Object.ToolTipText     =   "Sort up"
-                     Object.Tag             =   "SortUp"
-                     ImageIndex      =   7
-                  EndProperty
-                  BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Object.ToolTipText     =   "Sort down"
-                     Object.Tag             =   "SortDown"
-                     ImageIndex      =   8
-                  EndProperty
-                  BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Object.Tag             =   ""
-                     Style           =   3
-                     Object.Width           =   2150
-                     MixedState      =   -1  'True
-                  EndProperty
-                  BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-                     Key             =   "Search"
-                     Object.ToolTipText     =   "Suchen"
-                     Object.Tag             =   "Search"
-                     ImageIndex      =   9
-                  EndProperty
-               EndProperty
-               Begin VB.TextBox TxtSearchFriends 
-                  Height          =   330
-                  Left            =   3480
-                  TabIndex        =   51
-                  Text            =   "Suche"
-                  Top             =   30
-                  Width           =   2010
-               End
-            End
-            Begin VB.ListBox LstFriends 
-               Height          =   3210
-               ItemData        =   "Form1.frx":163FA
-               Left            =   0
-               List            =   "Form1.frx":163FC
-               TabIndex        =   49
-               Top             =   390
-               Width           =   5520
-            End
-         End
-         Begin ComctlLib.TabStrip TSFamFrnds 
-            Height          =   4335
-            Left            =   0
-            TabIndex        =   46
-            Top             =   4560
-            Width           =   5775
-            _ExtentX        =   10186
-            _ExtentY        =   7646
-            TabWidthStyle   =   2
-            _Version        =   327682
-            BeginProperty Tabs {0713E432-850A-101B-AFC0-4210102A8DA7} 
-               NumTabs         =   2
-               BeginProperty Tab1 {0713F341-850A-101B-AFC0-4210102A8DA7} 
-                  Caption         =   "Kinder"
-                  Object.Tag             =   ""
-                  ImageVarType    =   2
-               EndProperty
-               BeginProperty Tab2 {0713F341-850A-101B-AFC0-4210102A8DA7} 
-                  Caption         =   "Freunde"
-                  Object.Tag             =   ""
-                  ImageVarType    =   2
-               EndProperty
-            EndProperty
-         End
-         Begin VB.ComboBox CmbTelefonNr 
-            Height          =   345
-            Left            =   1680
-            TabIndex        =   14
-            Top             =   4080
-            Width           =   4095
-         End
-         Begin VB.ComboBox CmbAddress 
-            Height          =   345
-            Left            =   1680
-            TabIndex        =   13
-            Top             =   3600
-            Width           =   4095
-         End
-         Begin VB.ComboBox CmbFather 
-            Height          =   345
-            Left            =   1680
-            TabIndex        =   12
-            Top             =   3120
-            Width           =   4095
-         End
-         Begin VB.TextBox TxtBirthD 
-            Height          =   345
-            Left            =   1680
-            TabIndex        =   11
-            Top             =   1680
-            Width           =   4095
-         End
-         Begin VB.TextBox TxtFamName 
-            Height          =   345
-            Left            =   1680
-            TabIndex        =   10
-            Top             =   1200
-            Width           =   4095
-         End
-         Begin VB.TextBox TxtName2 
-            Height          =   345
-            Left            =   1680
-            TabIndex        =   9
-            Top             =   720
-            Width           =   4095
-         End
-         Begin VB.ComboBox CmbMother 
-            Height          =   345
-            Left            =   1680
-            TabIndex        =   8
-            Top             =   2640
-            Width           =   4095
-         End
-         Begin VB.TextBox TxtName 
-            Height          =   345
-            Left            =   1680
-            TabIndex        =   7
-            Top             =   240
-            Width           =   4095
-         End
-         Begin VB.ComboBox CmbPersonGender 
-            Height          =   345
-            Left            =   1680
-            TabIndex        =   6
-            Top             =   2160
-            Width           =   4095
-         End
-         Begin VB.Label LblTelefonNr 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Telefonnummer"
-            Height          =   225
-            Left            =   120
-            TabIndex        =   23
-            Top             =   4080
-            Width           =   1365
-         End
-         Begin VB.Label LblAddress 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Adresse"
-            Height          =   225
-            Left            =   120
-            TabIndex        =   22
-            Top             =   3600
-            Width           =   735
-         End
-         Begin VB.Label LblFather 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Vater"
-            Height          =   225
-            Left            =   120
-            TabIndex        =   21
-            Top             =   3120
-            Width           =   525
-         End
-         Begin VB.Label LblBirthD 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Geburtsdatum"
-            Height          =   225
-            Left            =   120
-            TabIndex        =   20
-            Top             =   1680
-            Width           =   1260
-         End
-         Begin VB.Label LblFamName 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Familienname"
-            Height          =   225
-            Left            =   120
-            TabIndex        =   19
-            Top             =   1200
-            Width           =   1260
-         End
-         Begin VB.Label LblName2 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "zus. Vornamen"
-            Height          =   225
-            Left            =   120
-            TabIndex        =   18
-            Top             =   720
-            Width           =   1365
-         End
-         Begin VB.Label LblMother 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Mutter"
-            Height          =   225
-            Left            =   120
-            TabIndex        =   17
-            Top             =   2640
-            Width           =   630
-         End
-         Begin VB.Label LblName 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Vorname"
-            Height          =   225
-            Left            =   120
-            TabIndex        =   16
-            Top             =   240
-            Width           =   735
-         End
-         Begin VB.Label LblGender 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Gender"
-            Height          =   225
-            Left            =   120
-            TabIndex        =   15
-            Top             =   2160
-            Width           =   630
-         End
-      End
-   End
    Begin VB.PictureBox PnlCCAT 
       Appearance      =   0  '2D
       ForeColor       =   &H80000008&
@@ -1022,6 +575,453 @@ Begin VB.Form FMain
          End
       End
    End
+   Begin VB.PictureBox PnlPersons 
+      Appearance      =   0  '2D
+      ForeColor       =   &H80000008&
+      Height          =   9255
+      Left            =   0
+      ScaleHeight     =   9225
+      ScaleWidth      =   11745
+      TabIndex        =   1
+      Top             =   360
+      Width           =   11775
+      Begin VB.PictureBox PnlPersonList 
+         Appearance      =   0  '2D
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'Kein
+         ForeColor       =   &H80000008&
+         Height          =   9135
+         Left            =   0
+         ScaleHeight     =   9135
+         ScaleWidth      =   5655
+         TabIndex        =   24
+         Top             =   0
+         Width           =   5655
+         Begin ComctlLib.Toolbar TlbPersons 
+            Height          =   390
+            Left            =   120
+            TabIndex        =   25
+            Top             =   450
+            Width           =   5520
+            _ExtentX        =   9737
+            _ExtentY        =   688
+            ButtonWidth     =   635
+            ButtonHeight    =   582
+            ImageList       =   "ILDataTlb"
+            _Version        =   327682
+            BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
+               NumButtons      =   11
+               BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "New"
+                  Object.Tag             =   "AddNew"
+                  ImageIndex      =   1
+               EndProperty
+               BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Insert"
+                  Object.Tag             =   "InsertNew"
+                  ImageIndex      =   2
+               EndProperty
+               BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Edit"
+                  Object.Tag             =   "EditSave"
+                  ImageIndex      =   3
+               EndProperty
+               BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Delete"
+                  Object.Tag             =   "Delete"
+                  ImageIndex      =   4
+               EndProperty
+               BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.Tag             =   ""
+                  Style           =   3
+                  MixedState      =   -1  'True
+               EndProperty
+               BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Move up"
+                  Object.Tag             =   "MoveUp"
+                  ImageIndex      =   5
+               EndProperty
+               BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Move down"
+                  Object.Tag             =   "MoveDown"
+                  ImageIndex      =   6
+               EndProperty
+               BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Sort up"
+                  Object.Tag             =   "SortUp"
+                  ImageIndex      =   7
+               EndProperty
+               BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Sort down"
+                  Object.Tag             =   "SortDown"
+                  ImageIndex      =   8
+               EndProperty
+               BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.Tag             =   ""
+                  Style           =   3
+                  Object.Width           =   2150
+                  MixedState      =   -1  'True
+               EndProperty
+               BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                  Object.ToolTipText     =   "Suchen"
+                  Object.Tag             =   "Search"
+                  ImageIndex      =   9
+               EndProperty
+            EndProperty
+            Begin VB.TextBox TxtSearchPerson 
+               Height          =   330
+               Left            =   3480
+               TabIndex        =   53
+               Text            =   "Suche"
+               Top             =   30
+               Width           =   2010
+            End
+         End
+         Begin VB.ListBox LstPerson 
+            Height          =   8160
+            ItemData        =   "Form1.frx":163F2
+            Left            =   120
+            List            =   "Form1.frx":163F4
+            OLEDragMode     =   1  'Automatisch
+            OLEDropMode     =   1  'Manuell
+            TabIndex        =   26
+            Top             =   840
+            Width           =   5520
+         End
+         Begin VB.Label LblPersons 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Personen"
+            BeginProperty Font 
+               Name            =   "Consolas"
+               Size            =   14.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   330
+            Left            =   120
+            TabIndex        =   27
+            Top             =   120
+            Width           =   1200
+         End
+      End
+      Begin VB.PictureBox PnlPersonDetail 
+         Appearance      =   0  '2D
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'Kein
+         ForeColor       =   &H80000008&
+         Height          =   9015
+         Left            =   5760
+         ScaleHeight     =   9015
+         ScaleWidth      =   5895
+         TabIndex        =   5
+         Top             =   0
+         Width           =   5895
+         Begin VB.PictureBox PnlTabChildren 
+            Appearance      =   0  '2D
+            BackColor       =   &H80000005&
+            ForeColor       =   &H80000008&
+            Height          =   3975
+            Left            =   120
+            ScaleHeight     =   3945
+            ScaleWidth      =   5385
+            TabIndex        =   47
+            Top             =   5040
+            Width           =   5415
+            Begin VB.ListBox LstChildren 
+               Height          =   3660
+               ItemData        =   "Form1.frx":163F6
+               Left            =   0
+               List            =   "Form1.frx":163F8
+               TabIndex        =   52
+               Top             =   0
+               Width           =   5520
+            End
+         End
+         Begin VB.PictureBox PnlTabFriends 
+            Appearance      =   0  '2D
+            BackColor       =   &H80000005&
+            ForeColor       =   &H80000008&
+            Height          =   3855
+            Left            =   120
+            ScaleHeight     =   3825
+            ScaleWidth      =   5505
+            TabIndex        =   48
+            Top             =   5040
+            Width           =   5535
+            Begin ComctlLib.Toolbar TlbPersonFriends 
+               Height          =   390
+               Left            =   0
+               TabIndex        =   50
+               Top             =   0
+               Width           =   5535
+               _ExtentX        =   9763
+               _ExtentY        =   688
+               ButtonWidth     =   635
+               ButtonHeight    =   582
+               ImageList       =   "ILDataTlb"
+               _Version        =   327682
+               BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
+                  NumButtons      =   11
+                  BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Object.ToolTipText     =   "New"
+                     Object.Tag             =   "AddNew"
+                     ImageIndex      =   1
+                  EndProperty
+                  BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Object.ToolTipText     =   "Insert"
+                     Object.Tag             =   "InsertNew"
+                     ImageIndex      =   2
+                  EndProperty
+                  BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Object.ToolTipText     =   "Edit"
+                     Object.Tag             =   "EditSave"
+                     ImageIndex      =   3
+                  EndProperty
+                  BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Object.ToolTipText     =   "Delete"
+                     Object.Tag             =   "Delete"
+                     ImageIndex      =   4
+                  EndProperty
+                  BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Object.Tag             =   ""
+                     Style           =   3
+                     MixedState      =   -1  'True
+                  EndProperty
+                  BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Object.ToolTipText     =   "Move up"
+                     Object.Tag             =   "MoveUp"
+                     ImageIndex      =   5
+                  EndProperty
+                  BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Object.ToolTipText     =   "Move down"
+                     Object.Tag             =   "MoveDown"
+                     ImageIndex      =   6
+                  EndProperty
+                  BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Object.ToolTipText     =   "Sort up"
+                     Object.Tag             =   "SortUp"
+                     ImageIndex      =   7
+                  EndProperty
+                  BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Object.ToolTipText     =   "Sort down"
+                     Object.Tag             =   "SortDown"
+                     ImageIndex      =   8
+                  EndProperty
+                  BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Object.Tag             =   ""
+                     Style           =   3
+                     Object.Width           =   2150
+                     MixedState      =   -1  'True
+                  EndProperty
+                  BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+                     Key             =   "Search"
+                     Object.ToolTipText     =   "Suchen"
+                     Object.Tag             =   "Search"
+                     ImageIndex      =   9
+                  EndProperty
+               EndProperty
+               Begin VB.TextBox TxtSearchFriends 
+                  Height          =   330
+                  Left            =   3480
+                  TabIndex        =   51
+                  Text            =   "Suche"
+                  Top             =   30
+                  Width           =   2010
+               End
+            End
+            Begin VB.ListBox LstFriends 
+               Height          =   3210
+               ItemData        =   "Form1.frx":163FA
+               Left            =   0
+               List            =   "Form1.frx":163FC
+               TabIndex        =   49
+               Top             =   390
+               Width           =   5520
+            End
+         End
+         Begin ComctlLib.TabStrip TSFamFrnds 
+            Height          =   4335
+            Left            =   0
+            TabIndex        =   46
+            Top             =   4560
+            Width           =   5775
+            _ExtentX        =   10186
+            _ExtentY        =   7646
+            TabWidthStyle   =   2
+            _Version        =   327682
+            BeginProperty Tabs {0713E432-850A-101B-AFC0-4210102A8DA7} 
+               NumTabs         =   2
+               BeginProperty Tab1 {0713F341-850A-101B-AFC0-4210102A8DA7} 
+                  Caption         =   "Kinder"
+                  Object.Tag             =   ""
+                  ImageVarType    =   2
+               EndProperty
+               BeginProperty Tab2 {0713F341-850A-101B-AFC0-4210102A8DA7} 
+                  Caption         =   "Freunde"
+                  Object.Tag             =   ""
+                  ImageVarType    =   2
+               EndProperty
+            EndProperty
+         End
+         Begin VB.ComboBox CmbTelefonNr 
+            Height          =   345
+            Left            =   1680
+            TabIndex        =   14
+            Top             =   4080
+            Width           =   4095
+         End
+         Begin VB.ComboBox CmbAddress 
+            Height          =   345
+            Left            =   1680
+            TabIndex        =   13
+            Top             =   3600
+            Width           =   4095
+         End
+         Begin VB.ComboBox CmbFather 
+            Height          =   345
+            Left            =   1680
+            TabIndex        =   12
+            Top             =   3120
+            Width           =   4095
+         End
+         Begin VB.TextBox TxtBirthD 
+            Height          =   345
+            Left            =   1680
+            TabIndex        =   11
+            Top             =   1680
+            Width           =   4095
+         End
+         Begin VB.TextBox TxtFamName 
+            Height          =   345
+            Left            =   1680
+            TabIndex        =   10
+            Top             =   1200
+            Width           =   4095
+         End
+         Begin VB.TextBox TxtName2 
+            Height          =   345
+            Left            =   1680
+            TabIndex        =   9
+            Top             =   720
+            Width           =   4095
+         End
+         Begin VB.ComboBox CmbMother 
+            Height          =   345
+            Left            =   1680
+            TabIndex        =   8
+            Top             =   2640
+            Width           =   4095
+         End
+         Begin VB.TextBox TxtName 
+            Height          =   345
+            Left            =   1680
+            TabIndex        =   7
+            Top             =   240
+            Width           =   4095
+         End
+         Begin VB.ComboBox CmbPersonGender 
+            Height          =   345
+            Left            =   1680
+            TabIndex        =   6
+            Top             =   2160
+            Width           =   4095
+         End
+         Begin VB.Label LblTelefonNr 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Telefonnummer"
+            Height          =   225
+            Left            =   120
+            TabIndex        =   23
+            Top             =   4080
+            Width           =   1365
+         End
+         Begin VB.Label LblAddress 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Adresse"
+            Height          =   225
+            Left            =   120
+            TabIndex        =   22
+            Top             =   3600
+            Width           =   735
+         End
+         Begin VB.Label LblFather 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Vater"
+            Height          =   225
+            Left            =   120
+            TabIndex        =   21
+            Top             =   3120
+            Width           =   525
+         End
+         Begin VB.Label LblBirthD 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Geburtsdatum"
+            Height          =   225
+            Left            =   120
+            TabIndex        =   20
+            Top             =   1680
+            Width           =   1260
+         End
+         Begin VB.Label LblFamName 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Familienname"
+            Height          =   225
+            Left            =   120
+            TabIndex        =   19
+            Top             =   1200
+            Width           =   1260
+         End
+         Begin VB.Label LblName2 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "zus. Vornamen"
+            Height          =   225
+            Left            =   120
+            TabIndex        =   18
+            Top             =   720
+            Width           =   1365
+         End
+         Begin VB.Label LblMother 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Mutter"
+            Height          =   225
+            Left            =   120
+            TabIndex        =   17
+            Top             =   2640
+            Width           =   630
+         End
+         Begin VB.Label LblName 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Vorname"
+            Height          =   225
+            Left            =   120
+            TabIndex        =   16
+            Top             =   240
+            Width           =   735
+         End
+         Begin VB.Label LblGender 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Gender"
+            Height          =   225
+            Left            =   120
+            TabIndex        =   15
+            Top             =   2160
+            Width           =   630
+         End
+      End
+   End
    Begin ComctlLib.ImageList ILDataTlb 
       Left            =   9960
       Top             =   0
@@ -1245,8 +1245,8 @@ Private Sub Form_Load()
     m_SplPersons.BorderStyle = bsXPStyl
     
     'Me.Caption = App.ProductName & " - " & Application.DefaultFileName '& "]"
-    Dim pfn As PathFileName
-    If Len(Command$) Then Set pfn = MNew.PathFileName(Command$)
+    Dim PFN As PathFileName
+    If Len(Command$) Then Set PFN = MNew.PathFileName(Command$)
 '        if application.IsValidFileExt(pfn)
 '        Set m_Doc = MNew.Document()
 '        UpdateView
@@ -1255,7 +1255,7 @@ Private Sub Form_Load()
 '        Set m_Doc = MNew.Document
 '        UpdateFMainCaption Application.DefaultFileName
 '    End If
-    NewDocument pfn
+    NewDocument PFN
 '    PnlPerson_Enabled = False
 '    TlbCountry_Enabled = False
 '    TlbAddress_Enabled = False
@@ -1427,12 +1427,12 @@ End Sub
 '* die Ansicht muss aktualisiert werden
 '
 
-Private Sub LstPerson_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, y As Single)
-    MyDragDrop Data, Effect, Button, Shift, X, y
+Private Sub LstPerson_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, x As Single, y As Single)
+    MyDragDrop Data, Effect, Button, Shift, x, y
 End Sub
 
-Private Sub Form_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, y As Single)
-    MyDragDrop Data, Effect, Button, Shift, X, y
+Private Sub Form_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, x As Single, y As Single)
+    MyDragDrop Data, Effect, Button, Shift, x, y
 '    If Data.Files.Count = 0 Then Exit Sub
 '    If Not Data.GetFormat(vbCFFiles) Then Exit Sub
 '    Dim pfn As PathFileName: Set pfn = MNew.PathFileName(Data.Files(1))
@@ -1446,43 +1446,43 @@ Private Sub Form_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integ
 '    UpdateFMainCaption
 '    UpdateView
 End Sub
-Private Sub MyDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, y As Single)
+Private Sub MyDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, x As Single, y As Single)
     If Data.Files.Count = 0 Then Exit Sub
     If Not Data.GetFormat(vbCFFiles) Then Exit Sub
-    Dim pfn As PathFileName: Set pfn = MNew.PathFileName(Data.Files(1))
-    NewDocument pfn
+    Dim PFN As PathFileName: Set PFN = MNew.PathFileName(Data.Files(1))
+    NewDocument PFN
 End Sub
 
 Private Sub mnuFileOpen_Click()
-    Dim pfn As PathFileName 'String ': pfn = App.Path & "\" & Application.DefaultFileName
-    If Application.OpenFileName_ShowDlg(pfn) = vbCancel Then Exit Sub
+    Dim PFN As PathFileName 'String ': pfn = App.Path & "\" & Application.DefaultFileName
+    If Application.OpenFileName_ShowDlg(PFN) = vbCancel Then Exit Sub
     'in Application.OpenFile wird die Datei schon in MRUFiles gesetzt. nein, jetzt hier in der Form
-    NewDocument pfn
+    NewDocument PFN
 '    Set m_Doc = MNew.Document(pfn)
 '    UpdateFMainCaption
 '    UpdateView
 End Sub
 
 Private Sub mnuFileRecentFile_Click(Index As Integer)
-    Dim pfn As PathFileName: Set pfn = Settings.MRUFiles.Item(Index)
-    NewDocument pfn
+    Dim PFN As PathFileName: Set PFN = Settings.MRUFiles.Item(Index)
+    NewDocument PFN
 '    Set m_Doc = MNew.Document(pfn)
 '    Settings.MRUFiles_Add pfn
 '    UpdateFMainCaption
 '    UpdateView
 End Sub
 
-Private Sub NewDocument(pfn As PathFileName)
+Private Sub NewDocument(PFN As PathFileName)
     'If pfn Is Nothing Then wird im Document erledigt
     'bei DragDrop und wenn über command eine Datei übergeben wird:
-    If Not pfn Is Nothing Then
-        If Not Application.IsValidFileExt(pfn) Then
-            MsgBox "Dieses Dateiformat wird momentan nicht unterstützt: " & vbCrLf & pfn.Extension & vbCrLf & pfn.Value
+    If Not PFN Is Nothing Then
+        If Not Application.IsValidFileExt(PFN) Then
+            MsgBox "Dieses Dateiformat wird momentan nicht unterstützt: " & vbCrLf & PFN.Extension & vbCrLf & PFN.Value
             Exit Sub
         End If
-        Settings.MRUFiles_Add pfn
+        Settings.MRUFiles_Add PFN
     End If
-    Set m_Doc = MNew.Document(pfn)
+    Set m_Doc = MNew.Document(PFN)
     UpdateFMainCaption
     UpdateView
 End Sub
@@ -1496,9 +1496,9 @@ Private Sub mnuFileSave_Click()
 End Sub
 Private Sub mnuFileSaveAs_Click()
     'Dim sfnm As String: sfnm = IIf(m_Doc.Exists, m_Doc.Name, App.Path & "\" & Application.DefaultFileName)
-    Dim pfn As PathFileName: Set pfn = m_Doc.PathFileName
-    If Application.SaveFileName_ShowDlg(pfn) = vbCancel Then Exit Sub
-    m_Doc.SaveFile pfn
+    Dim PFN As PathFileName: Set PFN = m_Doc.PathFileName
+    If Application.SaveFileName_ShowDlg(PFN) = vbCancel Then Exit Sub
+    m_Doc.SaveFile PFN
     UpdateFMainCaption
     UpdateView
 End Sub
@@ -1521,17 +1521,17 @@ Public Sub MRUFiles_FillMenu(mru As List)
         mnuFileRecentFiles.Visible = False
     Else
         mnuFileRecentFiles.Visible = True
-        Dim pfn As PathFileName: Set pfn = mru.Item(0)
-        mnuFileRecentFile(0).Caption = "&" & 1 & " " & pfn.Shorted
+        Dim PFN As PathFileName: Set PFN = mru.Item(0)
+        mnuFileRecentFile(0).Caption = "&" & 1 & " " & PFN.Shorted
         If n > 1 Then
             Dim i As Long
             For i = 1 To n - 1
                 If i >= mnuFileRecentFile.Count Then
                     Load mnuFileRecentFile(i)
                 End If
-                Set pfn = mru.Item(i)
-                If Not pfn Is Nothing Then
-                    mnuFileRecentFile(i).Caption = "&" & i + 1 & " " & pfn.Shorted
+                Set PFN = mru.Item(i)
+                If Not PFN Is Nothing Then
+                    mnuFileRecentFile(i).Caption = "&" & i + 1 & " " & PFN.Shorted
                 End If
             Next
         End If
@@ -1733,21 +1733,21 @@ Private Sub TlbPersons_ButtonClick(ByVal Button As ComctlLib.Button)
     End Select
 End Sub
 Private Sub BtnPersonAdd_Click()
-    Dim obj As New Person
-    If FrmPerson.ShowDialog(Me, obj, m_Doc.Persons, m_Doc.Addresses, m_Doc.TelefonNrs) = vbCancel Then Exit Sub
-    m_Doc.Add obj
+    Dim Obj As New Person
+    If FrmPerson.ShowDialog(Me, Obj, m_Doc.Persons, m_Doc.Addresses, m_Doc.TelefonNrs) = vbCancel Then Exit Sub
+    m_Doc.Add Obj
     Dim u As Long: u = m_Doc.Persons.Count - 1
     m_Doc.Persons.ListIndex = u
     'UpdateView_Person obj
     m_Doc.Persons.ToListbox LstPerson ', True
-    UpdateView_PersonTBs obj
+    UpdateView_PersonTBs Obj
 End Sub
 Private Sub BtnPersonInsert_Click()
     Dim i As Long: i = LstPerson.ListIndex
     If i < 0 Then Exit Sub
-    Dim obj As New Person
-    If FrmPerson.ShowDialog(Me, obj, m_Doc.Persons, m_Doc.Addresses, m_Doc.TelefonNrs) = vbCancel Then Exit Sub
-    m_Doc.Persons.Insert i, obj
+    Dim Obj As New Person
+    If FrmPerson.ShowDialog(Me, Obj, m_Doc.Persons, m_Doc.Addresses, m_Doc.TelefonNrs) = vbCancel Then Exit Sub
+    m_Doc.Persons.Insert i, Obj
     m_Doc.Persons.ToListbox LstPerson
     LstPerson.ListIndex = i
 End Sub
@@ -1778,8 +1778,8 @@ End Sub
 Private Sub BtnPersonDel_Click()
     Dim i As Long: i = LstPerson.ListIndex
     If i < 0 Then Exit Sub
-    Dim obj As Person: Set obj = m_Doc.Persons.Item(i)
-    Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & obj.Key
+    Dim Obj As Person: Set Obj = m_Doc.Persons.Item(i)
+    Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & Obj.Key
     If MsgBox(msg, vbOKCancel) = vbCancel Then Exit Sub
     m_Doc.Persons.Remove i
     UpdateView
@@ -1824,17 +1824,17 @@ Private Sub TlbCountry_ButtonClick(ByVal Button As ComctlLib.Button)
     End Select
 End Sub
 Private Sub BtnCountryAdd_Click()
-    Dim obj As New Country
-    If FrmCountry.ShowDialog(Me, obj) = vbCancel Then Exit Sub
-    m_Doc.Add obj
+    Dim Obj As New Country
+    If FrmCountry.ShowDialog(Me, Obj) = vbCancel Then Exit Sub
+    m_Doc.Add Obj
     m_Doc.Countries.ToListbox LstCountry
 End Sub
 Private Sub BtnCountryInsert_Click()
     Dim i As Long: i = LstCountry.ListIndex
     If i < 0 Then Exit Sub
-    Dim obj As New Country
-    If FrmCountry.ShowDialog(Me, obj) = vbCancel Then Exit Sub
-    m_Doc.Countries.Insert i, obj
+    Dim Obj As New Country
+    If FrmCountry.ShowDialog(Me, Obj) = vbCancel Then Exit Sub
+    m_Doc.Countries.Insert i, Obj
     m_Doc.Countries.ToListbox LstPerson
     LstCountry.ListIndex = i
 End Sub
@@ -1844,8 +1844,8 @@ End Sub
 Private Sub BtnCountryDel_Click()
     Dim i As Long: i = LstCountry.ListIndex
     If i < 0 Then Exit Sub
-    Dim obj As Country: Set obj = m_Doc.Countries.Item(i)
-    Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & obj.Key
+    Dim Obj As Country: Set Obj = m_Doc.Countries.Item(i)
+    Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & Obj.Key
     If MsgBox(msg, vbOKCancel) = vbCancel Then Exit Sub
     m_Doc.Countries.Remove i
     UpdateView
@@ -1892,21 +1892,21 @@ Private Sub TlbCity_ButtonClick(ByVal Button As ComctlLib.Button)
     End Select
 End Sub
 Private Sub BtnCityAdd_Click()
-    Dim obj As New City
-    If FrmCity.ShowDialog(Me, obj, m_Doc.Countries) = vbCancel Then Exit Sub
-    m_Doc.Add obj
+    Dim Obj As New City
+    If FrmCity.ShowDialog(Me, Obj, m_Doc.Countries) = vbCancel Then Exit Sub
+    m_Doc.Add Obj
     m_Doc.Cities.ToListbox LstCity
 End Sub
 Private Sub BtnCityEdit_Click()
     Dim i As Long: i = LstCity.ListIndex
     If i < 0 Then Exit Sub
-    Dim obj As City: Set obj = m_Doc.Cities.Item(i)
+    Dim Obj As City: Set Obj = m_Doc.Cities.Item(i)
 End Sub
 Private Sub BtnCityDel_Click()
     Dim i As Long: i = LstCity.ListIndex
     If i < 0 Then Exit Sub
-    Dim obj As City: Set obj = m_Doc.Cities.Item(i)
-    Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & obj.Key
+    Dim Obj As City: Set Obj = m_Doc.Cities.Item(i)
+    Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & Obj.Key
     If MsgBox(msg, vbOKCancel) = vbCancel Then Exit Sub
     m_Doc.Cities.Remove i
     UpdateView
@@ -1954,9 +1954,9 @@ Private Sub TlbTelNr_ButtonClick(ByVal Button As ComctlLib.Button)
     End Select
 End Sub
 Private Sub BtnTelNrAdd_Click()
-    Dim obj As New TelefonNr
-    If FrmTelefonNr.ShowDialog(Me, obj, m_Doc.Countries) = vbCancel Then Exit Sub
-    m_Doc.Add obj
+    Dim Obj As New TelefonNr
+    If FrmTelefonNr.ShowDialog(Me, Obj, m_Doc.Countries) = vbCancel Then Exit Sub
+    m_Doc.Add Obj
     m_Doc.TelefonNrs.ToListbox LstTelefonNr
 End Sub
 Private Sub BtnTelNrInsert_Click()
@@ -2004,9 +2004,9 @@ Private Sub TlbAddress_ButtonClick(ByVal Button As ComctlLib.Button)
 End Sub
 
 Private Sub BtnAddressAdd_Click()
-    Dim obj As New Address
-    If FrmAddress.ShowDialog(Me, obj, m_Doc.Cities) = vbCancel Then Exit Sub
-    m_Doc.Add obj
+    Dim Obj As New Address
+    If FrmAddress.ShowDialog(Me, Obj, m_Doc.Cities) = vbCancel Then Exit Sub
+    m_Doc.Add Obj
     m_Doc.Addresses.ToListbox LstAddress
 End Sub
 Private Sub BtnAddressInsert_Click()
@@ -2056,12 +2056,12 @@ End Sub
 Private Sub LstPerson_DblClick()
     Dim i As Long: i = LstPerson.ListIndex
     If i < 0 Then Exit Sub
-    Dim obj As Person: Set obj = SelectedPerson
-    If FrmPerson.ShowDialog(Me, obj, m_Doc.Persons, m_Doc.Addresses, m_Doc.TelefonNrs) = vbCancel Then Exit Sub
+    Dim Obj As Person: Set Obj = SelectedPerson
+    If FrmPerson.ShowDialog(Me, Obj, m_Doc.Persons, m_Doc.Addresses, m_Doc.TelefonNrs) = vbCancel Then Exit Sub
     'nur update dieses einzigen listitems
-    LstPerson.List(i) = obj.Key
+    LstPerson.List(i) = Obj.Key
     'dann noch alle textboxen updaten
-    UpdateView_PersonTBs obj
+    UpdateView_PersonTBs Obj
 End Sub
 Private Sub LstPerson_KeyDown(KeyCode As Integer, Shift As Integer)
     If LstPerson.ListIndex < 0 Then Exit Sub
@@ -2081,16 +2081,16 @@ Private Sub LstCountry_Click()
     m_Doc.Countries.ListIndex = LstCountry.ListIndex
 End Sub
 Private Sub LstCountry_DblClick()
-    Dim obj As Country: Set obj = SelectedCountry
-    If obj Is Nothing Then Exit Sub
-    If FrmCountry.ShowDialog(Me, obj) = vbCancel Then Exit Sub
-    LstCountry.List(LstCountry.ListIndex) = obj.Key
+    Dim Obj As Country: Set Obj = SelectedCountry
+    If Obj Is Nothing Then Exit Sub
+    If FrmCountry.ShowDialog(Me, Obj) = vbCancel Then Exit Sub
+    LstCountry.List(LstCountry.ListIndex) = Obj.Key
 End Sub
 Private Sub LstCountry_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyDelete Then
         Dim i As Long: i = LstCountry.ListIndex
-        Dim obj As Country: Set obj = m_Doc.Countries.Item(i)
-        Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & obj.Key
+        Dim Obj As Country: Set Obj = m_Doc.Countries.Item(i)
+        Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & Obj.Key
         If MsgBox(msg, vbOKCancel) = vbCancel Then Exit Sub
         m_Doc.Countries.Remove i
         LstCountry.RemoveItem i
@@ -2107,15 +2107,15 @@ Private Sub LstCity_Click()
     m_Doc.Cities.ListIndex = LstCity.ListIndex
 End Sub
 Private Sub LstCity_DblClick()
-    Dim obj As City: Set obj = SelectedCity
-    If FrmCity.ShowDialog(Me, obj, m_Doc.Countries) = vbCancel Then Exit Sub
-    LstCity.List(LstCity.ListIndex) = obj.Key
+    Dim Obj As City: Set Obj = SelectedCity
+    If FrmCity.ShowDialog(Me, Obj, m_Doc.Countries) = vbCancel Then Exit Sub
+    LstCity.List(LstCity.ListIndex) = Obj.Key
 End Sub
 Private Sub LstCity_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyDelete Then
         Dim i As Long: i = LstCity.ListIndex
-        Dim obj As City: Set obj = m_Doc.Cities.Item(i)
-        Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & obj.Key
+        Dim Obj As City: Set Obj = m_Doc.Cities.Item(i)
+        Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & Obj.Key
         If MsgBox(msg, vbOKCancel) = vbCancel Then Exit Sub
         m_Doc.Cities.Remove i
         LstCity.RemoveItem i
@@ -2133,15 +2133,15 @@ Private Sub LstAddress_Click()
     m_Doc.Addresses.ListIndex = LstAddress.ListIndex
 End Sub
 Private Sub LstAddress_DblClick()
-    Dim obj As Address: Set obj = SelectedAddress
-    If FrmAddress.ShowDialog(Me, obj, m_Doc.Cities) = vbCancel Then Exit Sub
-    LstAddress.List(LstAddress.ListIndex) = obj.Key
+    Dim Obj As Address: Set Obj = SelectedAddress
+    If FrmAddress.ShowDialog(Me, Obj, m_Doc.Cities) = vbCancel Then Exit Sub
+    LstAddress.List(LstAddress.ListIndex) = Obj.Key
 End Sub
 Private Sub LstAddress_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyDelete Then
         Dim i As Long: i = LstAddress.ListIndex
-        Dim obj As Address: Set obj = m_Doc.Addresses.Item(i)
-        Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & obj.Key
+        Dim Obj As Address: Set Obj = m_Doc.Addresses.Item(i)
+        Dim msg As String: msg = "Soll das Object wirklich gelöscht werden?" & vbCrLf & Obj.Key
         If MsgBox(msg, vbOKCancel) = vbCancel Then Exit Sub
         m_Doc.Addresses.Remove i
         LstAddress.RemoveItem i
@@ -2158,9 +2158,9 @@ Private Sub LstTelefonNr_Click()
     m_Doc.TelefonNrs.ListIndex = LstTelefonNr.ListIndex
 End Sub
 Private Sub LstTelefonNr_DblClick()
-    Dim obj As TelefonNr: Set obj = SelectedTelefonNr
-    If FrmTelefonNr.ShowDialog(Me, obj, m_Doc.Countries) = vbCancel Then Exit Sub
-    LstTelefonNr.List(LstTelefonNr.ListIndex) = obj.Key
+    Dim Obj As TelefonNr: Set Obj = SelectedTelefonNr
+    If FrmTelefonNr.ShowDialog(Me, Obj, m_Doc.Countries) = vbCancel Then Exit Sub
+    LstTelefonNr.List(LstTelefonNr.ListIndex) = Obj.Key
 End Sub
 
 Property Let PnlPerson_Enabled(ByVal Value As Boolean)
@@ -2244,13 +2244,13 @@ Sub UpdateView()
     
 End Sub
 
-Sub UpdateView_Person(obj As Person)
-    UpdateView_PersonTBs obj
+Sub UpdateView_Person(Obj As Person)
+    UpdateView_PersonTBs Obj
     UpdateView_PersonLV
 End Sub
-Sub UpdateView_PersonTBs(obj As Person)
-    If obj Is Nothing Then Exit Sub
-    With obj
+Sub UpdateView_PersonTBs(Obj As Person)
+    If Obj Is Nothing Then Exit Sub
+    With Obj
         Me.TxtName.Text = .PreName1
         Me.TxtName2.Text = .PreName2
         Me.TxtFamName.Text = .FamName

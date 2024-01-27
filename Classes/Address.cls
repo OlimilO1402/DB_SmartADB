@@ -13,7 +13,7 @@ Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
 Option Explicit
 Public Street    As String
-Public HNr       As String 'could also be like "15a"
+Public HNr       As String 'usually it's a number like 1, 2, 4 but it could also be like 15a
 Public Info      As String 'additional info (z.B. "Villa Kunderbunt", "Stiege links" etc)
 Private m_City   As City
 'Private m_Person As Person
