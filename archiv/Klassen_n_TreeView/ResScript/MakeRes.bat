@@ -1,0 +1,1 @@
+"C:\Programme\Microsoft Visual Studio\VB98\Wizards\rc.exe" "C:\Programme\Microsoft Visual Studio\VB98\Klassen_n_TreeView\ResScript\RessourceS.rc" >>log.txt                                                                                  
